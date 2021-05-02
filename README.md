@@ -37,7 +37,9 @@ Vsi uporabljeni oz. napisani programi se nahajajo v mapi Koda.
 
 ### Torek 4.5.2021 - Uvod v programiranje, osnovni pojmi, števila, nizi in ostale osnove
 
-##### Python
+---
+
+#### Python
 
 Python je interpretni visokoravni večnamenski programski jezik. Interpretni (interpreted) pomeni, da se napisana koda izvaja postopoma brez potrebe po kompilaciji programa. Pomembno je vedeti, da se koda izvaja zaporedoma po vrsticah (prvo se izvede prva vrstica, nato druga, tretja, ...)
 
@@ -72,7 +74,9 @@ class HelloWorld {
 
 Seveda bo vse bolj jasno, ko se bomo s tem soočili pri predavanjih in vajah, ko bomo pisali kodo. 
 
-##### Komentiranje (comments)
+---
+
+#### Komentiranje (comments)
 
 V Pythonu komentarje označimo na naslednja dva načina: 
 - Z znakom <code>#</code> na začetku vrstice, uporabljamo za enovrstične komentarje
@@ -84,7 +88,10 @@ V Pythonu komentarje označimo na naslednja dva načina:
 """ To je večvrstični komentar.
     Še ena vrstica!  """
 ```
-##### Spremenljivke (variables)
+
+---
+
+#### Spremenljivke (variables)
 
 Spremenljivke so lahko kateri koli niz ali pa ena sama črka. V spremenljivkah hranimo vse podatke kot so števila, nizi, seznami in celo funkcije. Spremenljivko definiramo z enačajem. 
 Pišemo jih kot navadne besede. Ne smejo vsebovati presledkov ali se začeti z številom. V Pythonu se držimo ne napisanega pravila, da kadar spremenljivka vsebuje več besed jih povežemo z podčrtaji. 
@@ -95,7 +102,9 @@ a = 10
 to_je_spremenljivka = "Niz"
 ```
 
-##### Podatkovni tipi (data types)
+---
+
+#### Podatkovni tipi (data types)
 
 Podatke ločimo na več tipov, vse hranimo v spremenljivkah in vsakemu posameznemu tipu pripadajo določene metode in lastnosti.
  
@@ -145,9 +154,9 @@ Podatke ločimo na več tipov, vse hranimo v spremenljivkah in vsakemu posamezne
   ```
 
 
+---
 
-
-##### Print in Input
+#### Print in Input
 
 Če želimo nek niz, število, seznam, podatek shranjen v spremenljivki ... izpisati na konzolo to naredimo z uporabo ukaza print()
 
@@ -170,7 +179,9 @@ print(vhodni_podatek)
 >>> Pozdravljeni
 ```
 
-##### Pretvorbe podatkovnih tipov (casting)
+---
+
+#### Pretvorbe podatkovnih tipov (casting)
 
 Če želimo pretvoriti določen podatkovni tip v nekega drugega to storimo z ukazi, ki jih pišemo enako kot željeni tip. Torej <code>str(), int(), list(), ...</code>. 
 
