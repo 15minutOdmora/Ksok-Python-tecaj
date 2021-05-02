@@ -55,7 +55,7 @@ if True:
   print("Hello world")
 ```
 
-Primer iste kode v programskem jeziku Java kjer se bloke deli z uporabo ( {}):
+Primer iste kode v programskem jeziku Java kjer se bloke deli z uporabo (<code>{}<code>):
 
 ```java
 class HelloWorld {
