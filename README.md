@@ -5,9 +5,10 @@ V naslednjih nekaj tednih bo potekalo 6 eno in pou urnih predavanj. Soočli se b
 pa bomo poskušali naučeno uporabiti v lastnem programu. 
 
 **Kontakt predavatelja ter Zoom:**  
-- Liam Mislej  
-  - liammislej@gmail.com  
-  - zoom: coming soon  
+Liam Mislej  
+  liammislej@gmail.com  
+  zoom: coming soon  
+  
 V kolikor imate kakršnakoli vprašanja ali rabite pomoč pri programiranju izven ur predavanj, mi lahko pišete na e-naslov in vam bom z veseljem pomagal.  
 
 ---
@@ -31,6 +32,8 @@ Tečaj bo sledil sklopom iz spodnjega vira, s tem da bomo sklope podrobneje pred
 [W3schools Python Tutorial](https://www.w3schools.com/python/default.asp)
 
 Vsi uporabljeni oz. napisani programi se nahajajo v mapi Koda.
+
+---
 
 ### Torek 4.5.2021 - Uvod v programiranje, osnovni pojmi, števila, nizi in ostale osnove
 
@@ -80,6 +83,8 @@ Načrtovano je, da bomo skupaj predelali naslednje teme:
 - Nizi (strings)
 - Logične vrednosti (booleans)
 - Operaterji (operators)
+
+
 
 ### Torek 11.5.2021 - Podatkovni tipi in zanke
 
