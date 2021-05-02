@@ -72,11 +72,81 @@ class HelloWorld {
 
 Seveda bo vse bolj jasno, ko se bomo s tem soočili pri predavanjih in vajah, ko bomo pisali kodo. 
 
-Načrtovano je, da bomo skupaj predelali naslednje teme:
+##### Komentiranje (comments)
 
-- Komentiranje (comments)  
-- Spremenljivke (variables)
-- Podatkovni tipi (data types)
+V Pythonu komentarje označimo na naslednja dva načina: 
+- Z znakom <code>#</code> na začetku vrstice, uporabljamo za enovrstične komentarje
+- Z uporabo treh dvojnih narekovajev <code>"""</code> na začetku in koncu komentarja, uporabljamo za večvrstične komentarje 
+
+```python
+# To je enovrstični komentar 
+
+""" To je večvrstični komentar.
+    Še ena vrstica!  """
+```
+##### Spremenljivke (variables)
+
+Spremenljivke so lahko kateri koli niz ali pa ena sama črka. V spremenljivkah hranimo vse podatke kot so števila, nizi, seznami in celo funkcije. Spremenljivko definiramo z enačajem. 
+Pišemo jih kot navadne besede. Ne smejo vsebovati presledkov ali se začeti z številom. V Pythonu se držimo ne napisanega pravila, da kadar spremenljivka vsebuje več besed jih povežemo z podčrtaji. 
+
+Primer:
+```python
+a = 10 
+to_je_spremenljivka = "Niz"
+```
+
+##### Podatkovni tipi (data types)
+
+Podatke ločimo na več tipov, vse hranimo v spremenljivkah in vsakemu posameznemu tipu pripadajo določene metode in lastnosti.
+ 
+- int = cela števila 1, 2, 0, -1, -2300 ...  
+  ```python
+    a = 10 
+    b = 0
+    c = 6
+  ```
+- float = decimalna števila 2.13, 1.5, 0.75, -2.33 ...  
+  ```python
+    a = 10.4 
+    b = 0.5
+    c = 6.123
+  ```
+- str = nizi in črke "a", "To je niz", "0.24"
+  ```python
+    a = 'a' 
+    b = "beseda"
+    c = "Celoten stavek."
+    d = "24"  # To ni število vendar niz
+  ```
+- list = seznam [1, 3, 4], [[1, 2, 3], [4, 5, 6]]
+  ```python
+    a = [1, 2, 3]
+    b = [1, 1, 1, 1, 0]
+  ```
+- tuple = n-terka (1, 2), (3, 4, 5)
+  ```python
+    a = (1, 2)
+    b = (1, 2, 3, 4)
+    c = (,1)
+  ```
+- set = množica {3, "b", "c"}
+  ```python
+    a = {3, 4, 10, "neki"} 
+  ```
+- dict = slovar {"ključ": podatek}
+  ```python
+    a = {"ključ 1": 5, "ključ 2": 7}
+  ```
+  
+- bool = binarna vrednost True, False
+  ```python
+    a = True = 1
+    b = False = 0
+  ```
+
+
+
+
 - Print in Input
 - Števila (numbers)
 - Pretvorbe podatkovnih tipov (casting)
