@@ -147,9 +147,70 @@ Podatke ločimo na več tipov, vse hranimo v spremenljivkah in vsakemu posamezne
 
 
 
-- Print in Input
-- Števila (numbers)
-- Pretvorbe podatkovnih tipov (casting)
+##### Print in Input
+
+Če želimo nek niz, število, seznam, podatek shranjen v spremenljivki ... izpisati na konzolo to naredimo z uporabo ukaza print()
+
+```python
+print("Hello world!")
+>>> Hello world!
+
+print(42)
+>>> 42
+```
+
+Če želimo iz konzole shraniti nek vhod(nekaj kar napišemo) uporabimo ukaz input(), program pri tej vrstici počaka na vhodni podatek, ko je le ta napisan ga vrne. Podatek pa lahko shranimo v spremenljivko. 
+
+Opomba: Podatek se vedno shrani kot niz, torej tipa str. 
+
+```python
+vhodni_podatek = input()
+# Napišemo npr.: Pozdravljeni
+print(vhodni_podatek)
+>>> Pozdravljeni
+```
+
+##### Pretvorbe podatkovnih tipov (casting)
+
+Če želimo pretvoriti določen podatkovni tip v nekega drugega to storimo z ukazi, ki jih pišemo enako kot željeni tip. Torej <code>str(), int(), list(), ...</code>. 
+
+Tip podatka ali spremenljivke preverimo z ukazom type().
+
+```python
+a = '5'
+print(type(a))
+>>> str
+
+b = 5 
+print(type(b))
+>>> int
+
+c = int(a)  # Niz shranjen v sprem. a, torej "5", pretvorimo v celo število 5
+print(type(c))
+>>> int
+print(c)
+>>> 5
+
+d = str(b)  # Število shranjeno v sprem. b, torej 5, pretvorimo v niz
+print(type(d))
+>>> str
+print(d)
+>>> 5  # Nize Python izpisuje brez narekovajev, zato pri tem izpisu izgleda, kot da je to število čeprav je niz
+
+decimalno_stevilo = 2.5
+celo_stevilo = int(decimalno_stevilo)
+print(type(decimalno_stevilo))
+>>> float
+print(type(celo_stevilo))
+>>> int
+
+print(celo_stevilo)
+>>> 3
+# Python, kadar pretvarjamo iz decimalnih števil v cela števila, ta zaokroži navzgor po osnovnem pravilu zaokroževanja.
+```
+
+
+
 - Nizi (strings)
 - Logične vrednosti (booleans)
 - Operaterji (operators)
