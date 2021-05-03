@@ -72,6 +72,8 @@ class HelloWorld {
 }
 ```
 
+Pri javi ni potrebno bloke indentirati kot je prikazano odzgoraj. Če bi želeli ba lahko zgornjo kodo napisali v eni sami vrstici, vendar uporabljamo indente zaradi berljivosti.
+
 Seveda bo vse bolj jasno, ko se bomo s tem soočili pri predavanjih in vajah, ko bomo pisali kodo. 
 
 ---
