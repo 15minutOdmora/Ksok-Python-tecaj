@@ -96,12 +96,19 @@ V Pythonu komentarje označimo na naslednja dva načina:
 #### Spremenljivke (variables)
 
 Spremenljivke so lahko kateri koli niz ali pa ena sama črka. V spremenljivkah hranimo vse podatke kot so števila, nizi, seznami in celo funkcije. Spremenljivko definiramo z enačajem. 
-Pišemo jih kot navadne besede. Ne smejo vsebovati presledkov ali se začeti z številom. V Pythonu se držimo ne napisanega pravila, da kadar spremenljivka vsebuje več besed jih povežemo z podčrtaji. 
+Pišemo jih kot navadne besede. Ne smejo vsebovati presledkov ali se začeti z številom. V Pythonu se držimo ne napisanega pravila, da kadar spremenljivka vsebuje več besed jih povežemo z podčrtaji, prav tako spremenljivke v določenih primerih začnemo z podčrtaji. 
 
 Primer:
 ```python
 a = 10 
 to_je_spremenljivka = "Niz"
+_spremenljivka = "Niz"
+__spremenljivka = "Niz"
+
+# Tega ne počnemo:
+00spremenljivka = "Niz"
+to je spremenljivka = "Niz"
+!tojespremenljivka = "Niz"
 ```
 
 ---
