@@ -14,7 +14,8 @@ V kolikor imate kakršnakoli vprašanja ali rabite pomoč pri programiranju izve
 ---
 
 ## Novice
-Novice bodo objavljene tukaj.
+
+Prva predavanja bodo v torek(4.5.2021) od 16:30 do 18:15 na zgronjem Zoom naslovu.
 
 ---
 
