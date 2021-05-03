@@ -65,7 +65,7 @@ Primer iste kode v programskem jeziku Java kjer se bloke deli z uporabo (<code>{
 ```java
 class HelloWorld {
     public static void main(String[] args) {
-        if (True) {
+        if (true) {
             System.out.println("Hello, World!"); 
         }
     }
