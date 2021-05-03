@@ -163,11 +163,11 @@ Podatke ločimo na več tipov, vse hranimo v spremenljivkah in vsakemu posamezne
 Če želimo nek niz, število, seznam, podatek shranjen v spremenljivki ... izpisati na konzolo to naredimo z uporabo ukaza print()
 
 ```python
-print("Hello world!")
->>> Hello world!
+>>> print("Hello world!")
+Hello world!
 
-print(42)
->>> 42
+>>> print(42)
+42
 ```
 
 Če želimo iz konzole shraniti nek vhod(nekaj kar napišemo) uporabimo ukaz input(), program pri tej vrstici počaka na vhodni podatek, ko je le ta napisan ga vrne. Podatek pa lahko shranimo v spremenljivko. 
@@ -175,10 +175,10 @@ print(42)
 Opomba: Podatek se vedno shrani kot niz, torej tipa str. 
 
 ```python
-vhodni_podatek = input()
-# Napišemo npr.: Pozdravljeni
-print(vhodni_podatek)
->>> Pozdravljeni
+>>> vhodni_podatek = input()
+>>> # Napišemo npr.: Pozdravljeni
+>>> print(vhodni_podatek)
+Pozdravljeni
 ```
 
 ---
@@ -190,35 +190,35 @@ print(vhodni_podatek)
 Tip podatka ali spremenljivke preverimo z ukazom type().
 
 ```python
-a = '5'
-print(type(a))
->>> str
+>>> a = '5'
+>>> print(type(a))
+str
 
-b = 5 
-print(type(b))
+>>> b = 5 
+>>> print(type(b))
+int
+
+>>> c = int(a)  # Niz shranjen v sprem. a, torej "5", pretvorimo v celo število 5
+>>> print(type(c))
 >>> int
+>>> print(c)
+5
 
-c = int(a)  # Niz shranjen v sprem. a, torej "5", pretvorimo v celo število 5
-print(type(c))
->>> int
-print(c)
->>> 5
+>>> d = str(b)  # Število shranjeno v sprem. b, torej 5, pretvorimo v niz
+>>> print(type(d))
+str
+>>> print(d)
+5  # Nize Python izpisuje brez narekovajev, zato pri tem izpisu izgleda, kot da je to število čeprav je niz
 
-d = str(b)  # Število shranjeno v sprem. b, torej 5, pretvorimo v niz
-print(type(d))
->>> str
-print(d)
->>> 5  # Nize Python izpisuje brez narekovajev, zato pri tem izpisu izgleda, kot da je to število čeprav je niz
+>>> decimalno_stevilo = 2.5
+>>> celo_stevilo = int(decimalno_stevilo)
+>>> print(type(decimalno_stevilo))
+float
+>>> print(type(celo_stevilo))
+int
 
-decimalno_stevilo = 2.5
-celo_stevilo = int(decimalno_stevilo)
-print(type(decimalno_stevilo))
->>> float
-print(type(celo_stevilo))
->>> int
-
-print(celo_stevilo)
->>> 3
+>>> print(celo_stevilo)
+3
 # Python, kadar pretvarjamo iz decimalnih števil v cela števila, ta zaokroži navzgor po osnovnem pravilu zaokroževanja.
 ```
 
@@ -286,32 +286,32 @@ Kot pri vseh ostalih programskih jezikih so nizi seznami byte-ov, ki predstavlja
 Nize označujemo z enojnimi narekovaji <code>'Niz'</code> ali dvojnimi narekovaji <code>"Niz"</code>. Ne pisano pravilo je, da se posamezne znake označuje z enojnimi narekovaji, več znakov v vrstici pa z dvojnimi narekovaji. Nize lahko shranimo v spremenljivke.
 
 ```python
-niz1 = 'a'
-niz2 = "To je niz!"
+>>> niz1 = 'a'
+>>> niz2 = "To je niz!"
 
-print(niz1)
->>> a
+>>> print(niz1)
+a
 
-print(niz2)
->>> To je niz!
+>>> print(niz2)
+To je niz!
 ```
 
 Večvrstične nize pišemo podobno kot večvrstične komentarje, z uporabo treh dvojnih(ali enojnih) narekovajev.
 
 ```python
-niz1 = """ To je niz 
-napisan v dveh vrsticah. """
+>>> niz1 = """ To je niz 
+>>> napisan v dveh vrsticah. """
 
-print(niz1)
->>> To je niz napisan v dveh vrsticah.
+>>> print(niz1)
+To je niz napisan v dveh vrsticah.
 ```
 
 Opazimo, da se prelom v novo vrstico ni izpisal. To pa zato, ker Python tipkane prelome ignorira in se za to uporablja posebna oznaka <code>\n</code>.
 
 ```python
-print("To se bo \n prelomlo v novo vrstico.")
->>> To se bo 
->>>  prelomlo v novo vrstico.
+>>> print("To se bo \n prelomlo v novo vrstico.")
+To se bo 
+ prelomlo v novo vrstico.
 ```
 
 **String Operations:**
@@ -319,13 +319,13 @@ print("To se bo \n prelomlo v novo vrstico.")
 Nize lahko med drugim seštevamo in množimo. 
 
 ```python
-niz1 = 'a' + '+' + 'b'
-print(niz1)
->>> a+b
+>>> niz1 = 'a' + '+' + 'b'
+>>> print(niz1)
+a+b
 
-niz2 = 'c' * 3
-print(niz2)
->>> ccc
+>>> niz2 = 'c' * 3
+>>> print(niz2)
+ccc
 ```
 
 **Strings are Arrays:**
@@ -335,35 +335,35 @@ Nizo so pravzaprav indeksirani seznami.
 Dolžino niza oz. število znakov preverimo z uporabo funkcije <code>len()</code>.
 
 ```python
-dolzina = len("a bc1")
-print(dolzina)
->>> 5
+>>> dolzina = len("a bc1")
+>>> print(dolzina)
+5
 
-niz1 = "niz"
-print(len(niz1))
->>> 3
+>>> niz1 = "niz"
+>>> print(len(niz1))
+3
 ```
 
 Nize lahko pretvorimo v sezname z uporabo funkcije <code>list()</code>, kjer je vsak znak posamezen element v seznamu.
 
 ```python
-print(list("niz"))
->>> ['n', 'i', 'z']
+>>> print(list("niz"))
+['n', 'i', 'z']
 ```
 
 Pri nizih velja indeksiranje, kar pomeni, da če želimo izvedeti ali shraniti znak na določenem mestu pišemo <code>[i]</code> zraven spremenljivke oz. niza, kjer je i celo število mesta na katerem se znak nahaja. Indeksiranje se začne z številom 0, tako da je znak na 1. mestu ub. na indeksu 0.
 
 ```python
-print("niz"[0])
->>> n
+>>> print("niz"[0])
+n
 
-niz1 = "To je ena vrstica!"
-print(niz1[1])
->>> o
+>>> niz1 = "To je ena vrstica!"
+>>> print(niz1[1])
+o
 
 # Če želimo izvedeti zadnji znak pišemo kar -1
-print(niz1[-1])
->>> !
+>>> print(niz1[-1])
+!
 ```
 
 
