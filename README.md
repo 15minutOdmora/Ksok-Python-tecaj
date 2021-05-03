@@ -1,7 +1,7 @@
 # Uvod v programiranje v Python-u 
 KŠOK - Uvod v programiranje v programskem jeziku Python. 
 
-V naslednjih nekaj tednih bo potekalo 6 eno in pou urnih predavanj. Soočli se bomo z vsemi potrebnimi osnovami programiranja v Pythonu, pri zadnjem predavanju 
+V naslednjih nekaj tednih bo potekalo 6 predavanj. Soočli se bomo z vsemi potrebnimi osnovami programiranja v Pythonu, pri zadnjem predavanju 
 pa bomo poskušali naučeno uporabiti v lastnem programu. 
 
 **Kontakt predavatelja ter Zoom:**  
@@ -15,7 +15,7 @@ V kolikor imate kakršnakoli vprašanja ali rabite pomoč pri programiranju izve
 
 ## Novice
 
-Prva predavanja bodo v torek(4.5.2021) od 16:00 do 17:45 na zgronjem Zoom naslovu.
+Prva predavanja bodo v torek(4.5.2021) ob 16:00 na zgronjem Zoom naslovu.
 
 ---
 
