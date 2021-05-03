@@ -224,6 +224,8 @@ print(celo_stevilo)
 
 #### Operaterji (operators)
 
+Operaterje uporabljamo za izvajanje operacij med podatkovnimi števili in spremenljivkami.
+
 **Arithmetic Operators:**
 
 | Operator |	Name |	Example |
@@ -275,10 +277,92 @@ print(celo_stevilo)
 | in | Returns True if a sequence with the specified value is present in the object	| x in y |	
 | not | in	Returns True if a sequence with the specified value is not present in the object | x not in y |
 
-- Nizi (strings)
-- Logične vrednosti (booleans)
-- Operaterji (operators)
+#### Nizi (strings)
 
+Kot pri vseh ostalih programskih jezikih so nizi seznami byte-ov, ki predstavljajo znake. 
+
+Nize označujemo z enojnimi narekovaji <code>'Niz'</code> ali dvojnimi narekovaji <code>"Niz"</code>. Ne pisano pravilo je, da se posamezne znake označuje z enojnimi narekovaji, več znakov v vrstici pa z dvojnimi narekovaji. Nize lahko shranimo v spremenljivke.
+
+```python
+niz1 = 'a'
+niz2 = "To je niz!"
+
+print(niz1)
+>>> a
+
+print(niz2)
+>>> To je niz!
+```
+
+Večvrstične nize pišemo podobno kot večvrstične komentarje, z uporabo treh dvojnih(ali enojnih) narekovajev.
+
+```python
+niz1 = """ To je niz 
+napisan v dveh vrsticah. """
+
+print(niz1)
+>>> To je niz napisan v dveh vrsticah.
+```
+
+Opazimo, da se prelom v novo vrstico ni izpisal. To pa zato, ker Python tipkane prelome ignorira in se za to uporablja posebna oznaka <code>\n</code>.
+
+```python
+print("To se bo \n prelomlo v novo vrstico.")
+>>> To se bo 
+>>>  prelomlo v novo vrstico.
+```
+
+**String Operations:**
+
+Nize lahko med drugim seštevamo in množimo. 
+
+```python
+niz1 = 'a' + '+' + 'b'
+print(niz1)
+>>> a+b
+
+niz2 = 'c' * 3
+print(niz2)
+>>> ccc
+```
+
+**Strings are Arrays:**
+
+Nizo so pravzaprav indeksirani seznami.
+
+Dolžino niza oz. število znakov preverimo z uporabo funkcije <code>len()</code>.
+
+```python
+dolzina = len("a bc1")
+print(dolzina)
+>>> 5
+
+niz1 = "niz"
+print(len(niz1))
+>>> 3
+```
+
+Nize lahko pretvorimo v sezname z uporabo funkcije <code>list()</code>, kjer je vsak znak posamezen element v seznamu.
+
+```python
+print(list("niz"))
+>>> ['n', 'i', 'z']
+```
+
+Pri nizih velja indeksiranje, kar pomeni, da če želimo izvedeti ali shraniti znak na določenem mestu pišemo <code>[i]</code> zraven spremenljivke oz. niza, kjer je i celo število mesta na katerem se znak nahaja. Indeksiranje se začne z številom 0, tako da je znak na 1. mestu ub. na indeksu 0.
+
+```python
+print("niz"[0])
+>>> n
+
+niz1 = "To je ena vrstica!"
+print(niz1[1])
+>>> o
+
+# Če želimo izvedeti zadnji znak pišemo kar -1
+print(niz1[-1])
+>>> !
+```
 
 
 ### Torek 11.5.2021 - Podatkovni tipi in zanke
