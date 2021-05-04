@@ -17,6 +17,14 @@ V kolikor imate kakršnakoli vprašanja ali rabite pomoč pri programiranju izve
 
 Prva predavanja bodo v torek(4.5.2021) ob 16:00 na zgronjem Zoom naslovu.
 
+Če si želite pobrati Python pred začetkom predavanj lahko to naredite na spodnji povezavi: 
+
+[https://www.python.org/](https://www.python.org/)
+
+Kjer greste pod downloads in si naložite najnovejšo verzijo oz. verzijo 3.8 v kolikor nimate Windows 10.
+
+Ostalo bom pokazal med predavanji. 
+
 ---
 
 ## Potek 
