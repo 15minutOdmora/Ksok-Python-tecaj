@@ -8,8 +8,7 @@ pa bomo poskušali naučeno uporabiti v lastnem programu.
 Liam Mislej  
   liammislej@gmail.com  
   **zoom:** 
-  Liam Mislej is inviting you to a scheduled Zoom meeting.
-
+  
   Topic: Kšok - Python
   Time: May 4, 2021 04:00 PM Budapest
 
