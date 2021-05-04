@@ -7,7 +7,7 @@ pa bomo poskušali naučeno uporabiti v lastnem programu.
 **Kontakt predavatelja ter Zoom:**  
 Liam Mislej  
   liammislej@gmail.com  
-  **zoom:** 
+  **zoom:** Link se bo morda spremenil, dejte prosim okoli 15.58 preverit še enkrat na stran, v primeru, da se link spremeni bo to napisano. 
   
   Topic: Kšok - Python
   Time: May 4, 2021 04:00 PM Budapest
