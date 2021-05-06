@@ -18,11 +18,11 @@ V kolikor imate kakršnakoli vprašanja ali rabite pomoč pri programiranju izve
 
 Druga predavanja bodo v torek(11.5.2021) ob 16:00 zoom naslov bom še dodal.
 
-Če si želite pobrati Python pred začetkom predavanj lahko to naredite na spodnji povezavi: 
+Python si lahko poberete na spodnji povezavi, vklučuje tudi tekstovni urejevalnik IDLE, katerega bomo med predavanji uporabljali:
 
 [https://www.python.org/](https://www.python.org/)
 
-Kjer greste pod downloads in si naložite najnovejšo verzijo oz. verzijo 3.8 v kolikor nimate Windows 10.
+Greste pod downloads in si naložite najnovejšo verzijo oz. verzijo 3.8 v kolikor nimate Windows 10.
 
 ---
 
