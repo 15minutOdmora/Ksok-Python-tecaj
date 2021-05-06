@@ -397,11 +397,134 @@ o
 
 ### Torek 11.5.2021 - Podatkovni tipi in zanke
 
-- Seznami (lists/arrays)
+#### Seznami (lists/arrays)
+
+Sezname uporabljamo za shranjevanje več podatkov v spremenljivkah. Posameznemu podatku pravimo element(item). Seznami so urejeni(elementi imajo definiran vrstni red, kateri se ne spremeni), možno je elemente spreminjati in dovoljujejo ponavljajoče podatke.
+Posamezen element v seznamo je lahko kateri koli podatkovni tip(int, str, celo še en seznam, tuple, ... , itd.)
+
+**Ustvarjanje seznama:**
+
+Seznam ustvarimo z oglatimi oklepaji in ga shranimo v spremenljivko:
+```python
+>>> prazen_seznam = []
+>>> print(prazen_seznam)
+[]
+
+>>> seznam_z_vec_elementi = [1, 3, "niz", [4, 5, 6]]
+>>> print(seznam_z_vec_elementi)
+[1, 3, "niz", [4, 5, 6]]
+```
+
+**Dostopanje do podatkov(Indexing):**
+
+Do podatkov dostopamo z indeksiranjem, kjer pišemo [indeks] zraven spremenljivke oz. seznama, kjer je indeks celo število.
+V programiranju se štetje začne od 0 naprej, tako se element na 1. mestu v seznamu nahaja na indeksu 0, na 2. mestu na indeksu 1, ..., itd. 
+
+```python
+>>> seznam = [1, 2, 3, 4]
+>>> print(seznam[0])
+1
+>>> print(seznam[2])
+3
+
+# Vrednost na določenem indeksu lahko shranimo v spremenljivko
+>>> vrednost = seznam[1]
+>>> print(vrednost)
+2
+
+# Spreminjanje vrednosti posameznega elementa
+>>> seznam[0] = 10
+>>> print(seznam)
+[10, 2, 3, 4]
+
+# POZOR: Če dostopamo do podatko z indeksom, ki presega <code>dolžino seznama - 1</code>(-1, ker štejemo od 0 pri indeksiranju) nam to vrne napako.
+>>> seznam = [1, 2, 3, 4]
+>>> print(seznam[4])
+Traceback (most recent call last):
+  File "<pyshell#1>", line 1, in <module>
+    print(seznam[4])
+IndexError: list index out of range
+```
+
+**Dolžina seznama(list size)**
+Dolžino seznama prederemo z uporabo funkcije <code>len()</code>, ta vrne število elementov in to lahko shranimo v spremenljivko.
+```
+>>> print(len([1, 2, 3, 4, 5]))
+5
+
+>>> seznam = [1, 2, 3, 4, 5, 6]
+>>> dolzina = len(seznam)
+>>> print(dolzina)
+6
+```
+
+**Dodajanje podatkov v seznam:**
+- metoda append doda element na konec seznama, kot parameter prejme element, pišemo kot: <code>seznam.append(novi_element)</code>
+- metoda insert vrine element pred določenim indeksom, prejme dva parametra indeks in element, pišemo kot: <code>seznam.insert(indeks, novi_element)</code>
+
+```python
+>>> seznam = [1, 2, 3, 4, 5]
+>>> seznam.append(6)
+>>> print(seznam)
+[1, 2, 3, 4, 5, 6]
+
+>>> seznam = [1, 2, 3, 4, 5]
+>>> seznam.insert(1, "element")
+>>> print(seznam)
+[1, "element", 2, 3, 4, 5]
+```
+
+**Odstranjevanje elementov:**
+- metoda remove odstrani željen element iz seznama, kot parameter prejme element, pišemo kot: <code>seznam.remove(element)</code>
+- metoda pop odstrani element na željenem indeksu, kot parameter prejme indeks, pišemo kot: <code>seznam.pop(indeks)</code> 
+
+```python
+>>> seznam = ["kšok", "python", "tečaj"]
+>>> seznam.remove("kšok")
+>>> print(seznam)
+["python", "tečaj"]
+
+>>> seznam = ["kšok", "python", "tečaj"]
+>>> seznam.pop(1)
+>>> print(seznam)
+["kšok", "tečaj"]
+```
+
+**Seštevanje seznamov:**
+Sezname lahko seštevamo z uporabo operatorja <code>+</code>. Vrstni red je tle pomemben saj seznama zlepi skupaj.
+```python
+>>> seznam1 = ["kšok", "python", "tečaj"]
+>>> seznam2 = [1, 2, 3]
+>>> seznam_sesteti = seznam1 + seznam2
+>>> print(seznam sesteti)
+["kšok", "python", "tečaj", 1, 2, 3]
+```
+
+**Urejanje seznamov(Sorting):**
+
+Sezname lahko uredimo po velikosti, z uporabo metode sort, pišemo: <code>seznam.sort()</code>. To uredi seznam po velikosti tako, da je najmanjši element na prvem mestu(indeksu 0) največji pa na zadnjem. V kolikor želimo obratno sortiranje(od največjega do najmanjšega kot parameter podamo <code>reverse=True</code>.
+Metoda sezname uredi alfanumerično(prvo po številih), oz. če seznam vsebuje le nize, po abecedi(kjer je 'a' najmanjša možna vrednost)
+```python
+>>> seznam = [2, 3, 4, 5, 1, 0]
+>>> seznam.sort()
+>>> print(seznam)
+[0, 1, 2, 3, 4, 5]
+
+>>> seznam = [2, 3, 4, 5, 1, 0]
+>>> seznam.sort(reverse=True)
+>>> print(seznam)
+[5, 4, 3, 2, 1, 0]
+
+>>> seznam = ["a", "1a", "b"]
+>>> seznam.sort()
+>>> print(seznam)
+['1a', 'a', 'b']
+```
+
 - Tupli (tuples)
 - Množice (sets)
 - Slovarji (dictionaries)
-- Uporabne integrirane metode in funkcije 
+- if, elif in else
 - While zanka (while loop)
 - For zanka (for loop)
 
