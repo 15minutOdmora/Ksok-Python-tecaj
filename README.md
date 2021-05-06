@@ -7,18 +7,7 @@ pa bomo poskušali naučeno uporabiti v lastnem programu.
 **Kontakt predavatelja ter Zoom:**  
 Liam Mislej  
   liammislej@gmail.com  
-  **zoom:** Novi naslov.
-  
-  Topic: Kšok - Python
-  Time: May 4, 2021 04:00 PM Budapest
-
-  Join Zoom Meeting
-  https://uni-lj-si.zoom.us/j/94370353401
-
-  Meeting ID: 943 7035 3401
-
-
-
+  **zoom:** Coming soon
 
   
 V kolikor imate kakršnakoli vprašanja ali rabite pomoč pri programiranju izven ur predavanj, mi lahko pišete na e-naslov in vam bom z veseljem pomagal.  
@@ -27,15 +16,13 @@ V kolikor imate kakršnakoli vprašanja ali rabite pomoč pri programiranju izve
 
 ## Novice
 
-Prva predavanja bodo v torek(4.5.2021) ob 16:00 na zgronjem Zoom naslovu.
+Druga predavanja bodo v torek(11.5.2021) ob 16:00 zoom naslov bom še dodal.
 
 Če si želite pobrati Python pred začetkom predavanj lahko to naredite na spodnji povezavi: 
 
 [https://www.python.org/](https://www.python.org/)
 
 Kjer greste pod downloads in si naložite najnovejšo verzijo oz. verzijo 3.8 v kolikor nimate Windows 10.
-
-Ostalo bom pokazal med predavanji. 
 
 ---
 
