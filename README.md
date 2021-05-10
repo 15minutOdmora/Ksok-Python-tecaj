@@ -759,9 +759,116 @@ else:
 Starost je večja ali enaka 45
 ```
 
+#### While zanka (while loop)
 
-- While zanka (while loop)
-- For zanka (for loop)
+While zanka se izvaja dokler je pogoj pri njej izpolnjen. V slovenščini bi to lahko brali kot: Dokler je res se izvajaj!. Pišemo: <code>while pogoj:</code> pri tem gremo v novo vrstico katiro indentiramo, da ločimo blok kode. Torej blok kode pod zanko se bo izvajal dokler pogoj v sami definicij zanke velja. Blok kode se izvaja v krogih, prvo se izvede prva vrstica, nato druga, tretja, ... ko pridemo na konec se vrne na začetek, preveri če pogoj velja, v primeru da ponovi enako kakor prej.
+
+```
+starost = 0
+
+while starost <= 6:
+    print(starost)
+    starost += 1  # Starosti prištevamo 1, zapisano je enako kakor satarost = starost + 1
+    
+# Izpiše:
+0
+1
+2
+3
+4
+5
+6
+
+# Izpišejo se le števila do 6, saj ko je število > 6 pogoj (starost <= 6) ne velja več ==> zanka se zaključi
+```
+
+**Vse zanke lahko zaključimo znotraj same zanke:** 
+
+Z uporabo ukaza <code>break</code>, lahko zanko predhodno zaključimo. In sicer na tistem koraku kjer je ukaz napisan. 
+
+Denimo, da ustvarimo neskončno zanko, tako, da kot pogoj pišemo True(kar bo vedno res). V spremenljivki starost hranimo število, na začetku je enako 0. Ob vsake koraku v zanki to število povečamo za 1. Znotraj same zanke pa imamo pogoj <code>if</code>, ki preverja če je vrednost spremenljivke <code>starost</code> presegla vrednost 100. V kolikor pogoj velja zaključimo zanko z uporabo ukaza break.
+
+```python
+starost = 0
+
+while True:  # Se izvaja v nedogled
+    print(starost)
+    if starost > 100:
+        break
+    starost += 1
+
+# Izpiše:
+0
+1
+2
+...
+98
+99
+100
+101
+```
+
+#### For zanka (for loop)
+
+For zanke uporabljamo za iteriranje skozi sekvence ali iteratorje, kot so seznami, množice, ...
+
+Pišemo: <code>for i in seznam:</code>, kjer je <code>i</code> spremenljivka ki bo zavzemalo določeno vrednost ob vsakem krogu zanke, <code>in</code> predstavlja v čemu, <code>seznam</code> pa nek seznam z podatki. 
+
+```python
+seznam = ["k", "š", "o", "k"]
+
+for i in seznam:
+    print(i)
+    
+# Izpiše 
+k
+š
+o
+k
+```
+
+Torej spremenljivka i zavzame vsako vrednost elementov v seznamu po vrstnem redu. Spremenljivko, katera iterira, lahko pišemo poljibno npr. 
+```python
+seznam = ["k", "š", "o", "k"]
+
+for crka in seznam:
+    print(crka)
+    
+# Izpiše 
+k
+š
+o
+k
+```
+
+**range:** 
+Pri for zankah pogostokrat uporabljamo ukaz <code>range(od, do, korak)</code>. Ta ustvari iterator števil, ki si ga lahko predstavljamo kot seznam. Ustvari zaporedna števila od parametra <code>od</code> do **in ne vključno** parametra <code>do</code>, z koraki <code>korak</code>. Parametri <code>od, do, korak</code> morajo biti števila.
+
+Range ni seznam vendar iterator, v to se nebomo poglabljali vendar če želimo prikazati range kot seznam, ga moramo prvo pretvoriti.
+
+```python
+>>> print(list(range(0, 10)))
+[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+# Če dodamo še parameter, ki predstavlja korak. Tega nastavimo na vrednost 2, se 'generira' vsako drugo število
+>>> print(list(range(0, 10, 2)))
+[0, 2, 4, 6, 8]
+```
+
+Opazimo, da zgornje ne ustvari števila 10, saje range ustvarja števila do ne vključno zadnjega. 
+
+Če to uporabimo v for zanki:
+```python
+for i in range(1, 5):
+    print(i)
+    
+# Izpiše 
+1
+2
+3
+4
+```
+
 
 ### Četrtek 13.5.2021 - Funkcije
 
