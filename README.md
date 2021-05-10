@@ -508,10 +508,258 @@ Metoda sezname uredi alfanumerično(prvo po številih), oz. če seznam vsebuje l
 ['1a', 'a', 'b']
 ```
 
-- Tupli (tuples)
-- Množice (sets)
-- Slovarji (dictionaries)
-- if, elif in else
+#### Tupli (tuples)
+
+Tuple prav tako uporabljamo za shranjevanje več podatkov v spremenljivkah. Tupli so urejeni(elementi imajo definiran vrstni red, kateri se ne spremeni), dovoljujejo ponavljajoče podatke in podatkov **ni mogoče spreminjati**.
+Posamezen element v tuplu je lahko kateri koli podatkovni tip(int, str, celo še en seznam, tuple, ... , itd.)
+
+**Ustvarjanje tupla:**
+
+Tuple ustvarimo z okroglimi oklepaji in ga shranimo v spremenljivko:
+```python
+>>> primer_tupla = (1, "a", "Ksok", 3.14)
+>>> print(primer_tupla)
+(1, "a", "Ksok", 3.14)
+
+>>> tuple_en_element = ("Niz",)  # Opazimo vejico, brez vejice bi Python ignoriral oklepaj in se to nebi shranilo kot tuple
+>>> print(tuple_en_element)
+("niz")
+```
+
+**Dostopanje do podatkov(Indexing):**
+
+Do podatkov dostopamo z indeksiranjem, kjer pišemo [indeks] zraven spremenljivke oz. seznama, kjer je indeks celo število.
+V programiranju se štetje začne od 0 naprej, tako se element na 1. mestu v seznamu nahaja na indeksu 0, na 2. mestu na indeksu 1, ..., itd. 
+
+```python
+>>> primer = (1, 2, 3)
+>>> print(primer[0])
+1
+
+>>> primer2 = (2, 4, 6, 7)
+>>> print(primer2[3])
+7
+
+# Do zadnjega elementa v seznamih in tuplih lahko dostopamo tudi tako, da pišemo -1 za indeks
+>>> primer3 = (1, 2, 3, 4, 5, 6, 7, 8, 9, 10)
+>>> print(primer3[-1])
+10
+```
+
+**Dolžina tupla(tuple size)**
+Dolžino tupla preberemo z uporabo funkcije <code>len()</code>.
+```
+>>> print(len((1, 2, 3)))
+3
+
+>>> seznam = (1, 23, 4, 5, "Niz", [1, 2, 3])
+>>> dolzina = len(seznam)
+>>> print(dolzina)
+6
+```
+
+#### Množice (sets)
+
+Množice niso urejene(elementi nimajoimajo definiran vrstni red, saj se lahko spremeni), ne dovoljujejo ponavljajoče podatke in podatkov ni mogoče spreminjati.
+Posamezen element v množici je lahko kateri koli podatkovni tip(int, str, celo še en seznam, tuple, ... , itd.)
+
+**Ustvarjanje množice:**
+
+Množico ustvarimo z zavitimi oklepaji in jo shranimo v spremenljivko:
+```python
+>>> primer_mnozice = {1, 3, "neki", True, "neki"}
+>>> print(primer_mnozice)
+{1, 3, "neki", True}  # Opazimo da se pojavi le en niz "neki", to pa zato ker v množici ne dovoljujemo ponavljajočih podatkov.
+```
+
+**Dostopanje do podatkov:**
+
+Do podatkov v množici lahko dostopamo z iteracijo oz. z uporabo for zanke, lahko pa preverimo če je podatek vsebovan v množici.
+
+```python
+>>> mnoz = {"podatek1", 2, 3, "kšok"}
+>>> print("kšok" in mnoz)  # Preverimo če je podatek "kšok" v množici 
+True 
+
+# Iteriramo skozi množico
+>>> for podatek in mnoz:
+>>>   print(podatek)
+"podatek1"
+2
+3
+"ksok"
+```
+
+**Dodajanje elementov v množico**
+
+V množico dodajamo elemente tako da na spremenljivki kjer jo hranimo uporabimo metodo add, primer: <code>mnoz.add(element)</code>.
+
+```python
+>>> mnoz = {1, 2, 3}
+>>> mnoz.add("Kšok")
+>>> print(mnoz)
+{1, 2, 3, "Kšok"}
+```
+
+**Odstranjevanje elementov iz množice**
+
+Elmente iz množice odstranimo z uporabo metode remove, primer: <code>mnoz.remove("Kšok")</code>. 
+
+```python
+>>> mnoz = {1, 2, "Kšok", 3}
+>>> mnoz.remove("Kšok")
+>>> print(mnoz)
+{1, 2, 3}
+```
+**Združevanje množic**
+
+Množice lahko združujemo na dva načina, z uporabo metode union, ki naredi unijo med množicami ali z uporabo metode update. To naredimo tako, da na spremenljivki kateri želimo dodati elemente iz neke druge množice uporabimo zgornji metodi. 
+
+```
+>>> mnoz_1 = {1, 2, 3}
+>>> mnoz_2 = {"k", "o", "p"}
+>>> mnoz_1.union(mnoz_2)
+>>> print(mnoz_1)
+{1, 2, 3, "k", "o", "p"}
+
+>>> mnoz_1 = {1, 2, 3}
+>>> mnoz_2 = {"k", "o", "p"}
+>>> mnoz_2.update(mnoz_1)
+>>> print(mnoz_1)
+{"k", "o", "p", 1, 2, 3}
+```
+
+#### Slovarji (dictionaries)
+
+Slovarje uporabljamo za hranjenje podatkov v parih ključ:podatek(key:value). Slovarji so urejeni(od Python 3.7 naprej), ne dovoljujejo ponavljajočih podatkov in podatke lahko spreminjamo. Prav tako lahko v njih hranimo vse možne tipe podatkov.
+
+**Ustvarjanje slovarja:**
+
+Slovar ustvarimo z uporabo zavitih oklepajev, posamezne pare ločimo z vejco, ključ v paru pa od podatko ločimo z dvopičjem.
+
+```python
+>>> slovar = {"ključ1": "podatek1", "ključ2": "podatek2", "ključ3": "podatek3"}
+>>> print(slovar)
+{"ključ1": "podatek1", "ključ2": "podatek2", "ključ3": "podatek3"}
+```
+
+**Dostopanje do podatkov:**
+
+Do podatkov pri slovarjih dostopamo z ključi in sicer zraven spremenljivke pišemo oglati oklepaj, notri pa ključ. To nam vrne podatek shranjen pri tistem ključu.
+
+```python
+>>> slovar = {"ključ1": 42, "ključ2": [1, 2, 3], 4: 5}
+>>> print(slovar["ključ1"])
+42
+>>> print(slovar["ključ2"])
+[1, 2, 3]
+>>> print(slovar[4])
+5
+```
+
+**Spreminjanje podatkov**
+
+Podatke spreminjamo tako da pri posameznem ključu definiramo novo vrednost. 
+
+```python
+>>> slovar = {"ključ1": 42, "ključ2": [1, 2, 3], 4: 5}
+>>> print(slovar)
+{"ključ1": 42, "ključ2": [1, 2, 3], 4: 5}
+
+# Spremenimo vrednost na ključu "ključ2" iz [1, 2, 3] v število 1
+>>> slovar["ključ2"] = 1
+>>> print(slovar)
+{"ključ1": 42, "ključ2": 1, 4: 5}
+```
+
+**Dodajanje in spreminjanje podatkov**
+
+Novi podatek dodamo tako, da enostavno napišemo novi ključ in enačimo z podatkom, enako kot pri spreminjanju podatkov. 
+```python
+>>> slovar = {"ključ1": 42, "ključ2": [1, 2, 3], 4: 5}
+>>> slovar["ključ4"] = "Novi podatek"
+{"ključ1": 42, "ključ2": [1, 2, 3], 4: 5, "ključ4": "Novi podatek"}
+```
+
+Podatek iz slovarja odstranimo z uporabo metode pop, kot parameter vstavimo ključ podatka katerega želimo izbrisati. 
+```python
+>>> slovar = {"ključ1": 42, "ključ2": [1, 2, 3], 4: 5}
+>>> slovar.pop("ključ2")
+>>> print(slovar)
+{"ključ1": 42, 4: 5}
+```
+
+
+#### if, elif in else
+
+Z if stavki določamo, če se bo določen blok kode izvedel. Tukaj bodo prvič do sedaj nastopili indenti. Z indenti ločimo bloke kode in so skupek presledkov, v Pythonu ponavadi uporabimo 4 presledko ali en klik na tipko <code>tab</code>.
+
+If stavke pišemo tako, da napišemo prvo <code>if</code> nato <code>pogoj</code> in nakoncu <code>:</code>. Pod samim stavkom pa določen blok kode, ki je seveda indentiran. Pogoj je lahko karkoli, ki vrne boolean(binarno) vrednost, torej <code>True</code> ali <code>False</code>. V primeru, da pogoj vrne <code>True</code> se bo blok kode pod if stavkom izvedel. 
+
+Pogoje ponavadi pišemo z uporabo operatorjev tipov:
+- Comparisson(<, >, ==, !=, ...)
+- Logical(and, or, not)
+- Membership(in)
+
+Konkretno na primeru: 
+
+**Opomba:** Zaradi indentacij, naslednji primeri ne bodo več pisani v shell-u, vendar v konkretnem Python programu(datoteka z končnico .py), tako ne bodo več nastopili znaki <code> >>> </code>, ki so predstavljali izvedeno kodo. Kadar bo neki izpisano bo to označeno z komentarjem.
+
+```python
+starost = 17
+if starost >= 18:
+    print("Starost je večja ali enaka 18")
+  
+# To ne izpiše ničesar saj pogoj ni izpovnjen(17 >/= 18)
+
+# Če starost spremenimo na npr. 19
+starost = 19
+if starost >= 18:
+    print("Starost je večja ali enaka 18")
+
+# Izpiše:
+Starost je večja ali enaka 18
+
+# V tem primeru se je blok kode pod if stavkom izvedel, saj je pogoj veljal.
+```
+
+**elif:** Elif stavke uporabljamo kadar potrebujemo dodatne pogoje. Uporabljamo jih lahko le po if stavkih in delujejo enako kot le tej, prav tako jih lahko uporabimo toliko kot želimo. Prvo se izvede if pogoj, če le ta ne velja nastopi prvi elif stavek, če še ta ne velja drugi elif stavek, ... in tako do prvega ki velja, ko se ta izvede se vsi preostali ne izvedejo. 
+
+```python
+starost = 19
+
+if starost < 18:
+    print("Starost je manj od 18")
+elif 18 <= starost < 21:
+  	print("Starost je več ali enako 18 ampak manj od 21")
+elif starost >= 21:
+    print("Starost je več ali enako 21")
+
+# Izpiše:
+Starost je več ali enako 18 ampak manj od 21
+```
+
+**else:** 
+
+Else uporabljamo, kadar želimo, da se izvede del kode kadar noben od zgornjih if, elif stavkov ne velja. Else pišemo zadnje in se izvede le takrat kadar se nič od zgornjega.
+
+```python
+starost = 46
+
+if starost < 18:
+    print("Starost je manj od 18")
+elif 18 <= starost < 21:
+  	print("Starost je več ali enako 18 ampak manj od 21")
+elif 21 <= starost < 45:
+    print("Starost je več ali enako 21 ampak manj od 45")
+else:
+    print("Starost je večja ali enaka 45")
+
+# Izpiše: 
+Starost je večja ali enaka 45
+```
+
+
 - While zanka (while loop)
 - For zanka (for loop)
 
