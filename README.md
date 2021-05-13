@@ -731,7 +731,8 @@ Starost je večja ali enaka 18
 # V tem primeru se je blok kode pod if stavkom izvedel, saj je pogoj veljal.
 ```
 
-**elif:** Elif stavke uporabljamo kadar potrebujemo dodatne pogoje. Uporabljamo jih lahko le po if stavkih in delujejo enako kot le tej, prav tako jih lahko uporabimo toliko kot želimo. Prvo se izvede if pogoj, če le ta ne velja nastopi prvi elif stavek, če še ta ne velja drugi elif stavek, ... in tako do prvega ki velja, ko se ta izvede se vsi preostali ne izvedejo. 
+**elif:**  
+Elif stavke uporabljamo kadar potrebujemo dodatne pogoje. Uporabljamo jih lahko le po if stavkih in delujejo enako kot le tej, prav tako jih lahko uporabimo toliko kot želimo. Prvo se izvede if pogoj, če le ta ne velja nastopi prvi elif stavek, če še ta ne velja drugi elif stavek, ... in tako do prvega ki velja, ko se ta izvede se vsi preostali ne izvedejo. 
 
 ```python
 starost = 19
@@ -747,7 +748,7 @@ elif starost >= 21:
 Starost je več ali enako 18 ampak manj od 21
 ```
 
-**else:** 
+**else:**  
 
 Else uporabljamo, kadar želimo, da se izvede del kode kadar noben od zgornjih if, elif stavkov ne velja. Else pišemo zadnje in se izvede le takrat kadar se nič od zgornjega.
 
@@ -766,6 +767,8 @@ else:
 # Izpiše: 
 Starost je večja ali enaka 45
 ```
+
+### Četrtek 13.5.2021 Zanke in funkcije 
 
 #### While zanka (while loop)
 
@@ -877,10 +880,79 @@ for i in range(1, 5):
 4
 ```
 
+#### Funkcije (functions)  
 
-### Četrtek 13.5.2021 - Funkcije
+Funkcije so bloki kode, ki se izvedejo le ko jih pokličemo. 
 
-- Funkcije (functions)
+Funkcijo definiramo z uporabo ukaza <code>def</code> za tem podamo ime funkcije in oklepaja <code>ime_funkcije()</code> na koncu pa še dvopičje <code>:</code> . V blok kode od funkcije se vključuje vse kar je pod definicijo indentirano. Definicij funkcij pišemo brez indentacije in se nahajajo izven zank, if stavkov, ... itd.  
+
+Primer: 
+
+```python
+def izpisi_pozdrav():
+    print("Pozdravljeni!")
+```
+
+Če poženemo .py datoteko, ki vsebje zgornjo definicijo funkcije se ne izpiše nič. Če želimo, da se funkcija izvede jo rabimo poklicati. pokličemo jo tako, da napišemo ime funkcije z oklepaji. 
+
+Spremenjen zgornji primer:
+
+```python
+def izpisi_pozdrav():
+    print("Pozdravljeni!")
+
+izpisi_pozdrav()
+
+# Ipiše:
+Pozdravljeni!
+```
+
+**Parametri:**  
+
+Funkcijam lahko podajamo parametre tako, da jih napišemo v oklepajih. Parametre pišemo kot spremenljivke in jih v definicij funkcije lahko uporabljamo. Število parametrov ni omejeno, torej jih lahko imamo poljubno. 
+
+```python
+def izpisi_stevila(a, b):  # Kot parametre v def. funkcije pišemo spremenljivke
+    print(a)  # Te spremenljivke lahko nato uporabimo v sami funkciji
+    print(b)
+
+izpisi_stevila(5, 4)  # Ko pokličemo funkcijo podamo konktretne vrednosti
+
+# Ipiše:
+5
+4
+```
+
+**Vračanje podatkov (return):**  
+
+Funkcije lahko tudi vrnejo vrednosti, to v definicij funkcije označimo z stavkom return, ko se le ta izvede sam program iztopi iz funkcije oz. se vse ostalo ne izvede. 
+Če funkcijo, ki vrne vrednost, pokličemo lahko to vrednost shranimo v spremenljivki
+
+```python
+def kvadriraj(x): 
+    kvadrat = x ** x
+    return kvadrat
+
+kvadrirano_stevilo = kvadriraj(5)
+
+print(kvadrirano_stevilo)
+# Ipiše:
+25
+```
+
+Funkcija ima lahko več <code>return</code> stavkov, izvedel pa se bo le eden.
+V funkcijah lahko definiramo tudi nove spremenljivke vendar te obstajajo le znotraj funkcije. 
+
+```python
+def pomnozi_z_pet(x): 
+    pet = 5
+    return x * pet  # Lahko vrnemo tudi operacijo, ta na koncu vrne izračunano število.
+
+print(pomnozi_z_pet(4))
+# Ipiše:
+20
+```
+
 - Lambda funkcije (lambdas)
 
 
