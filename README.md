@@ -26,11 +26,11 @@ V kolikor imate kakršnakoli vprašanja ali rabite pomoč pri programiranju izve
 
 Tretja predavanja bodo v torek(13.5.2021) ob 16:00 na zgornjem zoom naslovu.
 
-Python si lahko poberete na spodnji povezavi, vklučuje tudi tekstovni urejevalnik IDLE, katerega bomo med predavanji uporabljali:
+Python si lahko poberete na spodnji povezavi, vklučuje tudi tekstovni urejevalnik IDLE, ki ga bomo uporabljali med predavanji:
 
 [https://www.python.org/](https://www.python.org/)
 
-Greste pod downloads in si naložite najnovejšo verzijo oz. verzijo 3.8 v kolikor nimate Windows 10.
+Greste pod downloads in si naložite najnovejšo verzijo, oz. verzijo 3.8 v kolikor nimate Windows 10.
 
 ---
 
@@ -193,7 +193,7 @@ Hello world!
 42
 ```
 
-Če želimo iz konzole shraniti nek vhod(nekaj kar napišemo) uporabimo ukaz input(), program pri tej vrstici počaka na vhodni podatek, ko je le ta napisan ga vrne. Podatek pa lahko shranimo v spremenljivko. 
+Če želimo iz konzole shraniti nek vhod(nekaj kar napišemo) uporabimo ukaz input(), program pri tej vrstici počaka na vhodni podatek, ko je ta napisan, ga vrne. Podatek pa lahko shranimo v spremenljivko. 
 
 Opomba: Podatek se vedno shrani kot niz, torej tipa str. 
 
@@ -700,9 +700,9 @@ Podatek iz slovarja odstranimo z uporabo metode pop, kot parameter vstavimo klju
 
 #### if, elif in else
 
-Z if stavki določamo, če se bo določen blok kode izvedel. Tukaj bodo prvič do sedaj nastopili indenti. Z indenti ločimo bloke kode in so skupek presledkov, v Pythonu ponavadi uporabimo 4 presledko ali en klik na tipko <code>tab</code>.
+Z if stavki določamo, če se bo določen blok kode izvedel. Tukaj bodo prvič nastopili indenti, s katerimi ločimo bloke kode. Indenti so skupek presledkov - v Pythonu ponavadi uporabimo 4 presledke ali en klik na tipko <code>tab</code>.
 
-If stavke pišemo tako, da napišemo prvo <code>if</code> nato <code>pogoj</code> in nakoncu <code>:</code>. Pod samim stavkom pa določen blok kode, ki je seveda indentiran. Pogoj je lahko karkoli, ki vrne boolean(binarno) vrednost, torej <code>True</code> ali <code>False</code>. V primeru, da pogoj vrne <code>True</code> se bo blok kode pod if stavkom izvedel. 
+If stavke pišemo tako, da najprej napišemo <code>if</code> nato <code>pogoj</code> in na koncu <code>:</code>. Pod samim stavkom pa določen blok kode, ki je seveda indentiran. Pogoj je lahko karkoli, ki vrne boolean(binarno) vrednost, torej <code>True</code> ali <code>False</code>. V primeru, da pogoj vrne <code>True</code> se bo blok kode pod if stavkom izvedel. 
 
 Pogoje ponavadi pišemo z uporabo operatorjev tipov:
 - Comparisson(<, >, ==, !=, ...)
@@ -711,7 +711,7 @@ Pogoje ponavadi pišemo z uporabo operatorjev tipov:
 
 Konkretno na primeru: 
 
-**Opomba:** Zaradi indentacij, naslednji primeri ne bodo več pisani v shell-u, vendar v konkretnem Python programu(datoteka z končnico .py), tako ne bodo več nastopili znaki <code> >>> </code>, ki so predstavljali izvedeno kodo. Kadar bo neki izpisano bo to označeno z komentarjem.
+**Opomba:** Zaradi indentacij, naslednji primeri ne bodo več pisani v shell-u, vendar v konkretnem Python programu(datoteka s končnico .py), tako ne bodo več nastopili znaki <code> >>> </code>, ki predstavljajo izvedeno kodo. Kadar bo nekaj izpisano, bo to označeno z komentarjem.
 
 ```python
 starost = 17
@@ -732,7 +732,7 @@ Starost je večja ali enaka 18
 ```
 
 **elif:**  
-Elif stavke uporabljamo kadar potrebujemo dodatne pogoje. Uporabljamo jih lahko le po if stavkih in delujejo enako kot le tej, prav tako jih lahko uporabimo toliko kot želimo. Prvo se izvede if pogoj, če le ta ne velja nastopi prvi elif stavek, če še ta ne velja drugi elif stavek, ... in tako do prvega ki velja, ko se ta izvede se vsi preostali ne izvedejo. 
+Elif stavke uporabljamo kadar potrebujemo dodatne pogoje. Uporabljamo jih lahko le po if stavkih delujejo pa enako. Prav tako jih lahko uporabimo toliko kot želimo. Najprej se izvede if pogoj, če ta ne velja nastopi prvi elif stavek, če še ta ne velja drugi elif stavek, ... in tako do prvega ki velja, ko se ta izvede se vsi preostali ne izvedejo. 
 
 ```python
 starost = 19
@@ -750,7 +750,7 @@ Starost je več ali enako 18 ampak manj od 21
 
 **else:**  
 
-Else uporabljamo, kadar želimo, da se izvede del kode kadar noben od zgornjih if, elif stavkov ne velja. Else pišemo zadnje in se izvede le takrat kadar se nič od zgornjega.
+Else uporabljamo, kadar želimo, da se izvede del kode kadar noben od zgornjih if, elif stavkov ne velja. Else pišemo zadnje in se izvede le takrat ko se noben zgornji ukaz ne izvede.
 
 ```python
 starost = 46
@@ -768,11 +768,11 @@ else:
 Starost je večja ali enaka 45
 ```
 
-### Četrtek 13.5.2021 Zanke in funkcije 
+### Četrtek 13.5.2021 - Zanke in funkcije 
 
 #### While zanka (while loop)
 
-While zanka se izvaja dokler je pogoj pri njej izpolnjen. V slovenščini bi to lahko brali kot: Dokler je res se izvajaj!. Pišemo: <code>while pogoj:</code> pri tem gremo v novo vrstico katiro indentiramo, da ločimo blok kode. Torej blok kode pod zanko se bo izvajal dokler pogoj v sami definicij zanke velja. Blok kode se izvaja v krogih, prvo se izvede prva vrstica, nato druga, tretja, ... ko pridemo na konec se vrne na začetek, preveri če pogoj velja, v primeru da ponovi enako kakor prej.
+While zanka se izvaja dokler je pogoj pri njej izpolnjen. V slovenščini bi to lahko brali kot: Dokler je to res, se izvajaj!. Pišemo: <code>while pogoj:</code> pri tem gremo v novo vrstico, ki jo indentiramo, da ločimo blok kode. Torej blok kode pod zanko se bo izvajal dokler pogoj v sami definicij zanke velja. Blok kode se izvaja v krogih, najprej se izvede prva vrstica, nato druga, tretja, ... ko pridemo na konec, se vrne na začetek, preveri če pogoj velja, v primeru da velja, ponovi enako kakor prej.
 
 ```
 starost = 0
@@ -797,7 +797,7 @@ while starost <= 6:
 
 Z uporabo ukaza <code>break</code>, lahko zanko predhodno zaključimo. In sicer na tistem koraku kjer je ukaz napisan. 
 
-Denimo, da ustvarimo neskončno zanko, tako, da kot pogoj pišemo True(kar bo vedno res). V spremenljivki starost hranimo število, na začetku je enako 0. Ob vsake koraku v zanki to število povečamo za 1. Znotraj same zanke pa imamo pogoj <code>if</code>, ki preverja če je vrednost spremenljivke <code>starost</code> presegla vrednost 100. V kolikor pogoj velja zaključimo zanko z uporabo ukaza break.
+Denimo, da ustvarimo neskončno zanko, tako, da kot pogoj pišemo True(kar bo vedno res). V spremenljivki starost hranimo število, na začetku je enako 0. Ob vsakem koraku v zanki, to število povečamo za 1. Znotraj same zanke pa imamo pogoj <code>if</code>, ki preverja če je vrednost spremenljivke <code>starost</code> presegla vrednost 100. V kolikor pogoj velja zaključimo zanko z uporabo ukaza break.
 
 ```python
 starost = 0
@@ -823,7 +823,7 @@ while True:  # Se izvaja v nedogled
 
 For zanke uporabljamo za iteriranje skozi sekvence ali iteratorje, kot so seznami, množice, ...
 
-Pišemo: <code>for i in seznam:</code>, kjer je <code>i</code> spremenljivka ki bo zavzemalo določeno vrednost ob vsakem krogu zanke, <code>in</code> predstavlja v čemu, <code>seznam</code> pa nek seznam z podatki. 
+Pišemo: <code>for i in seznam:</code>, kjer je <code>i</code> spremenljivka ki bo zavzemala določeno vrednost ob vsakem krogu zanke, <code>in</code> pomeni v nečemu, <code>seznam</code> pa nek seznam z podatki. 
 
 ```python
 seznam = ["k", "š", "o", "k"]
@@ -838,7 +838,7 @@ o
 k
 ```
 
-Torej spremenljivka i zavzame vsako vrednost elementov v seznamu po vrstnem redu. Spremenljivko, katera iterira, lahko pišemo poljibno npr. 
+Torej spremenljivka i zavzame vsako vrednost elementov v seznamu po vrstnem redu. Spremenljivko, ki iterira, lahko pišemo poljubno npr. 
 ```python
 seznam = ["k", "š", "o", "k"]
 
@@ -853,9 +853,9 @@ k
 ```
 
 **range:** 
-Pri for zankah pogostokrat uporabljamo ukaz <code>range(od, do, korak)</code>. Ta ustvari iterator števil, ki si ga lahko predstavljamo kot seznam. Ustvari zaporedna števila od parametra <code>od</code> do **in ne vključno** parametra <code>do</code>, z koraki <code>korak</code>. Parametri <code>od, do, korak</code> morajo biti števila.
+Pri for zankah pogostokrat uporabljamo ukaz <code>range(od, do, korak)</code>. Ta ustvari iterator števil, ki si ga lahko predstavljamo kot seznam. Ustvari zaporedna števila od parametra <code>od</code> do **in ne vključno** parametra <code>do</code>, s koraki <code>korak</code>. Parametri <code>od, do, korak</code> morajo biti števila.
 
-Range ni seznam vendar iterator, v to se nebomo poglabljali vendar če želimo prikazati range kot seznam, ga moramo prvo pretvoriti.
+Range ni seznam, ampak iterator. V to se ne bomo poglabljali, če pa želimo prikazati range kot seznam, ga moramo najprej pretvoriti.
 
 ```python
 >>> print(list(range(0, 10)))
@@ -866,7 +866,7 @@ Range ni seznam vendar iterator, v to se nebomo poglabljali vendar če želimo p
 [0, 2, 4, 6, 8]
 ```
 
-Opazimo, da zgornje ne ustvari števila 10, saje range ustvarja števila do ne vključno zadnjega. 
+Opazimo, da se število 10 ne izpiše, to pa zato, ker je zadnje število po vrsti, to število ukaz range nikoli ne izpiše. 
 
 Če to uporabimo v for zanki:
 ```python
@@ -884,7 +884,7 @@ for i in range(1, 5):
 
 Funkcije so bloki kode, ki se izvedejo le ko jih pokličemo. 
 
-Funkcijo definiramo z uporabo ukaza <code>def</code> za tem podamo ime funkcije in oklepaja <code>ime_funkcije()</code> na koncu pa še dvopičje <code>:</code> . V blok kode od funkcije se vključuje vse kar je pod definicijo indentirano. Definicij funkcij pišemo brez indentacije in se nahajajo izven zank, if stavkov, ... itd.  
+Funkcijo definiramo z uporabo ukaza <code>def</code> za tem podamo ime funkcije in prazna oklepaja <code>ime_funkcije()</code> na koncu pa še dvopičje <code>:</code> . V blok kode od funkcije se vključuje vse kar je pod definicijo indentirano. Definicije funkcij pišemo brez indentacije in se nahajajo izven zank, if stavkov, ... itd.  
 
 Primer: 
 
@@ -893,7 +893,7 @@ def izpisi_pozdrav():
     print("Pozdravljeni!")
 ```
 
-Če poženemo .py datoteko, ki vsebje zgornjo definicijo funkcije se ne izpiše nič. Če želimo, da se funkcija izvede jo rabimo poklicati. pokličemo jo tako, da napišemo ime funkcije z oklepaji. 
+Če poženemo .py datoteko, ki vsebje zgornjo definicijo funkcije, se ne izpiše nič. Če želimo, da se funkcija izvede jo moramo poklicati. To storimo tako, da napišemo ime funkcije z oklepaji. 
 
 Spremenjen zgornji primer:
 
@@ -925,8 +925,8 @@ izpisi_stevila(5, 4)  # Ko pokličemo funkcijo podamo konktretne vrednosti
 
 **Vračanje podatkov (return):**  
 
-Funkcije lahko tudi vrnejo vrednosti, to v definicij funkcije označimo z stavkom return, ko se le ta izvede sam program iztopi iz funkcije oz. se vse ostalo ne izvede. 
-Če funkcijo, ki vrne vrednost, pokličemo lahko to vrednost shranimo v spremenljivki
+Funkcije lahko tudi vrnejo vrednosti, to v definicij funkcije označimo s stavkom return, ko se ta izvede, program izstopi iz funkcije oz. se vse ostalo ne izvede. 
+Če funkcijo, ki vrne vrednost pokličemo, lahko to vrednost shranimo v spremenljivki
 
 ```python
 def kvadriraj(x): 
@@ -941,7 +941,7 @@ print(kvadrirano_stevilo)
 ```
 
 Funkcija ima lahko več <code>return</code> stavkov, izvedel pa se bo le eden.
-V funkcijah lahko definiramo tudi nove spremenljivke vendar te obstajajo le znotraj funkcije. 
+V funkcijah lahko definiramo tudi nove spremenljivke vendar bodo te obstajale le znotraj funkcije. 
 
 ```python
 def pomnozi_z_pet(x): 
