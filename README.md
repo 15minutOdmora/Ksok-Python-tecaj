@@ -9,8 +9,8 @@ Liam Mislej
   liammislej@gmail.com  
   **zoom:**
 
-Topic: Kšok - Python
-Time: May 11, 2021 04:00 PM Budapest
+Topic: KŠOK - Python
+Time: May 13, 2021 04:00 PM Budapest
 
 Join Zoom Meeting
 https://uni-lj-si.zoom.us/j/8856744186?pwd=L3VqWmduV1VwN0QyanRxaHBvbHE4Zz09
@@ -18,15 +18,13 @@ https://uni-lj-si.zoom.us/j/8856744186?pwd=L3VqWmduV1VwN0QyanRxaHBvbHE4Zz09
 Meeting ID: 885 674 4186
 Passcode: 0WYJk0
 
-
-  
 V kolikor imate kakršnakoli vprašanja ali rabite pomoč pri programiranju izven ur predavanj, mi lahko pišete na e-naslov in vam bom z veseljem pomagal.  
 
 ---
 
 ## Novice
 
-Druga predavanja bodo v torek(11.5.2021) ob 16:00 zoom naslov bom še dodal.
+Tretja predavanja bodo v torek(13.5.2021) ob 16:00 na zgornjem zoom naslovu.
 
 Python si lahko poberete na spodnji povezavi, vklučuje tudi tekstovni urejevalnik IDLE, katerega bomo med predavanji uporabljali:
 
