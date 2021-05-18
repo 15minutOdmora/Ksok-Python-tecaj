@@ -431,6 +431,9 @@ o
 !
 ```
 
+**Format:**
+
+
 
 ### Torek 11.5.2021 - Podatkovni tipi in zanke
 
@@ -557,6 +560,31 @@ Metoda sezname uredi alfanumerično(prvo po številih), oz. če seznam vsebuje l
 >>> print(seznam)
 ['1a', 'a', 'b']
 ```
+
+**List comprehension:**
+
+Sezname lahko definiramo tudi enovrtično, to je v določenih primerih celo bolje. To naredimo tako, da v seznam kar napišemo for zanko, spremenljivka, ki se sprehaja se shrani na določen indeks(po vrstnem redu). Najbolje prikazati direktno na primeru:
+
+```python
+seznam = [i for i in range(10)]
+
+print(seznam)
+
+# Izpiše:
+[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+```
+
+Lahko vstavimo tudi pogojne stavke pred for zanko:
+
+```python
+seznam = ["Manj od 4" if i < 4 else i for i in range(10)]
+
+print(seznam)
+
+# Izpiše:
+['Manj od 4', 'Manj od 4', 'Manj od 4', 'Manj od 4', 4, 5, 6, 7, 8, 9]
+```
+
 
 #### Tupli (tuples)
 
@@ -995,22 +1023,53 @@ print(pomnozi_z_pet(4))
 20
 ```
 
-- Lambda funkcije (lambdas)
-
 
 ### Torek 18.5.2021 - Objektno programiranje 
 
-- Razredi (classes)
-- Dedovanje (inheritence)
+#### Lambda funkcije (lambdas)
+
+Podobno navadnim funkcijam lahko pišemo še enovrstične funkcije katerim pravimo lambda funkcije. Te uporabljamo, kadar potrebujemo enostavnejše funkcije, katere bi lahko zapisali v eni vrstici. Te funkcije definiramo brez besede <code>def</code> tako, da uporabimo izraz <code>lambda</code>. Njihovo funkcionalnost shranimo v spremenljivko. 
+
+Pišemo:
+<code>ime_sprem = lambda parameter: neka operacija ki jo funkcija izvede ali vrne</code>
+
+Če si pogledamo na primerih:
+
+```python
+kvadrat = lambda x: x**2  # Funkcija prejme število in vrne njegov kvadrat
+
+print(kvadrat(2))
+
+# Izpiše:
+4
+
+# Rezultat lahko shranimo v novo spremenljivko:
+rez = kvadrat(3)
+
+print(rez)
+
+# Izpiše:
+9
+```
+
+#### Rešitev naloge izrisovanja kvadrata
+
+Tukaj se bo po današnjih predavanjih pojavla rešitev.
+
+
+#### Križec krožec
+
+Tukaj se bo pojavila končna verzija igre križec krožec.
+
 
 ### Četrtek 20.5.2021 - Uvod v knjižnice in njihovo uporabo
 
-- Iteratorji (iterators)
-- Obseg v pythonu, funkcije v funkcijah, globalne spremenljivke (scope)
+- Razredi (classes)
+- Dedovanje (inheritence)
+- Obseg v pythonu, funkcije v funkcijah
 - Moduli in uvažanje (modules and imports)
 - PIP 
 - Nekaj integriranih knjižnjic: Date, Math, JSON, OS
-- Urejanje datotek (file handling)
 
 
 ### Torek 25.5.2021 - Uporaba zunanjih knjižnjic, prvi celotni program
