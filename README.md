@@ -7,7 +7,16 @@ pa bomo poskušali naučeno uporabiti v lastnem programu.
 **Kontakt predavatelja ter Zoom:**  
 Liam Mislej  
   liammislej@gmail.com  
-  **zoom:** Coming soon
+  **zoom:** 
+
+Topic: Kšok - Python
+Time: May 18, 2021 04:00 PM Budapest
+
+Join Zoom Meeting
+https://uni-lj-si.zoom.us/j/8856744186?pwd=L3VqWmduV1VwN0QyanRxaHBvbHE4Zz09
+
+Meeting ID: 885 674 4186
+Passcode: 0WYJk0
 
 ---
 
