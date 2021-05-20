@@ -1040,10 +1040,10 @@ print(pomnozi_z_pet(4))
 
 #### Lambda funkcije (lambdas)
 
-Podobno navadnim funkcijam lahko pišemo še enovrstične funkcije katerim pravimo lambda funkcije. Te uporabljamo, kadar potrebujemo enostavnejše funkcije, katere bi lahko zapisali v eni vrstici. Te funkcije definiramo brez besede <code>def</code> tako, da uporabimo izraz <code>lambda</code>. Njihovo funkcionalnost shranimo v spremenljivko. 
+Podobno kot navadne funkcije, lahko še enovrstične funkcije, ki jim pravimo lambda funkcije. Te uporabljamo, kadar potrebujemo enostavnejše funkcije, ki jih lahko zapišemo v eni vrstici. Te funkcije definiramo brez besede <code>def</code> tako, da uporabimo izraz <code>lambda</code>. Njihovo funkcionalnost shranimo v spremenljivko. 
 
 Pišemo:
-<code>ime_sprem = lambda parameter: neka operacija ki jo funkcija izvede ali vrne</code>
+<code>ime_sprem = lambda parameter: neka operacija, ki jo funkcija izvede ali vrne</code>
 
 Če si pogledamo na primerih:
 
@@ -1089,7 +1089,7 @@ def izrisi_kvadrat(n, k):
             print("*" * n)
 ```
 
-Enako lahko rešimo z uporabo "list comprehension", kjer seznam definiramo kar z for zanko, nakoncu pa seznam zlepimo skupaj.
+Enako lahko rešimo z uporabo "list comprehension", kjer seznam definiramo kar s for zanko, na koncu pa seznam zlepimo skupaj.
 
 ```python
 def izrisi_kvadrat_oneliner(n, k):
@@ -1100,7 +1100,7 @@ def izrisi_kvadrat_oneliner(n, k):
     print("".join(["*"*k+" "*(n-2*k)+"*"*k+"\n" if (i>=k and i<n-k) else "*"*n+"\n" for i in range(n)]))
 ```
 
-Metoda <code>join(seznam)</code> elemente v seznamu zlepi skupaj v niz tako, da med posameznimi znaki nastopi prazen niz <code>""</code> na kateremu kličemo metodo.
+Metoda <code>join(seznam)</code> elemente v seznamu zlepi skupaj v niz tako, da med posameznimi znaki nastopi prazen niz <code>""</code> ,na kateremu kličemo metodo.
 
 Zgornje lahko z uporabo lambda funkcije zapišemo dobesedno v eni vrstici:
 
@@ -1210,7 +1210,7 @@ else:
 
 Razred si najlažje predstavljamo kot nek načrt za določene objekte. Razredi vsebujejo atribute(podatki shranjeni v spremenljivkah razreda) in metode(funkcije, ki izvajajo operacije nad samim objektom)
 
-Razred definiramo z besedo <code>class</class>, nakar podamo ime razreda kot spremenljivko ter dvopičje, vse kar spada v razred indentiramo. V Pythonu imena razredov pišemo tako, da je prva črka posamezne besede napisana z veliko, posamezne besede pa ne ločujemo z podčrtaji. Temu pravilu pravimo CamelCase. 
+Razred definiramo z besedo <code>class</class>, nakar podamo ime razreda kot spremenljivko ter dvopičje; vse kar spada v razred indentiramo. V Pythonu imena razredov pišemo tako, da je prva črka posamezne besede napisana z veliko, posamezne besede pa ne ločujemo s podčrtaji. Temu pravilu pravimo CamelCase. 
 
 Če sedaj za primer razreda definiramo razred Oseba in mu podamo nekaj atributov, ki jih pišemo enako kot spremenljivke. 
 
@@ -1220,14 +1220,14 @@ class Oseba:
     priimek = "Mislej"
 ```
 
-Če bi želeli do podatkov dostopati moremo razred prvo inicializirati. To storimo tako, da z spremenljivko enačimo ime razreda z oklepaji. Kadar inicializiramo razred pravimo temu objekt. 
+Če bi želeli do podatkov dostopati moremo razred najprej inicializirati. To storimo tako, da s spremenljivko enačimo ime razreda z oklepaji. Kadar inicializiramo razred, pravimo temu objekt. 
 
 ```python
 o1 = Oseba()
 ```
 Tako je v sapremenljivki o1 shranjen objekt razreda Oseba. 
 
-Če želimo do posameznih atributov dostopati, zraven spremenljivke objekta napišemo ime atributa ter povežemo z piko.
+Če želimo do posameznih atributov dostopati, zraven spremenljivke objekta napišemo ime atributa ter povežemo s piko.
 ```python
 ime_o1 = o1.ime
 priimek_o1 = o1.priimek
@@ -1238,10 +1238,10 @@ print(ime_o1, priimek_o1)
 Liam Mislej
 ```
 
-Zgornji primer ni kaj dosti praktičen, saj vsakič ko naredimo objekt tipa Oseba ima ta pri atributih ime in priimek vrednosti "Liam" in "Mislej". 
+Zgornji primer ni zelo praktičen, saj vsakič ko naredimo objekt tipa Oseba, ima ta pri atributih ime in priimek vrednosti "Liam" in "Mislej". 
 
-Za to nastopi konstruktor <code>__init__</code>. Tega v razredu definiramo podobno kot funkcije. In je pomembno vedeti, da se izvede kadar objekt inicializiramo. 
-Funkcijam definiranim znotraj razredov pravimo metode(o temu malo kasneje). Konstruktorju <code>__init__</code> lahko podajamo parametre, tukaj nastopi nekolikor nenavadna sintaksa. 
+Za tem nastopi konstruktor <code>__init__</code>. Tega v razredu definiramo podobno kot funkcije. Pomembno je vedeti, da se izvede kadar objekt inicializiramo. 
+Funkcijam definiranim znotraj razredov pravimo metode(o tem kasneje). Konstruktorju <code>__init__</code> lahko podajamo parametre (tukaj nastopi nekoliko nenavadna sintaksa).
 
 Torej če bi zgornji primer razširili, da lahko razredu podamo določene vrednosti:
 
@@ -1251,7 +1251,7 @@ class Oseba:
         self.ime = ime
         self.priimek = priimek
 ```
-Opazimo novo spremenljivko self. Ta se nanaša na sam objekt, znotraj razreda, kadar želimo poizvedovati po določenih atributih pred imenom pišemo še self. Sicer bi lahko namesto self pisali karkoli vendar je taka navada in je prav, da se je držimo. 
+Opazimo novo spremenljivko self. Ta se nanaša na sam objekt znotraj razreda. Ko želimo poizvedovati po določenih atributih pred imenom pišemo še self. Sicer bi lahko namesto self pisali karkoli vendar je taka navada in je prav, da se je držimo. 
 
 Prvi parameter v konstruktorju <code>__init__</code> je namenjen imenu spremenljivke, ki se nanaša na sam objekt, v našem primeru na self.
 
@@ -1274,7 +1274,7 @@ Parameter, ki je na mestu <code>self</code> v definiciji razreda oz. konstruktor
 Metode so funkcije definirane v samem razredu. Pišemo jih enako kot funkcije. Če jim podamo parameter self lahko metoda manipulira z atributi razreda. V kolikor tega ne podamo metoda funkcionira kot navadna funkcija, le da jo kličemo malenkost drugače. 
 
 
-Če zgornjemu razredu dodamo atribut starost in metodo <code>rojstni_dan</code>, ki objektu poveča vrednost spremenljivke starost za 1. 
+Zgornjemu razredu dodajmo atribut starost in metodo <code>rojstni_dan</code>, ki objektu poveča vrednost spremenljivke starost za 1. 
 
 ```python
 class Oseba:
@@ -1290,7 +1290,7 @@ class Oseba:
         self.starost += 1
 ```
 
-Če želimo metodo uporabiti oz. klicati na že obstoječem objektu jo napišemo zraven spremenljivke objekta, ločimo z piko in dodamo oklepaje. Podobno kot pri atributih.
+Če želimo metodo uporabiti oz. klicati na že obstoječem objektu jo napišemo zraven spremenljivke objekta, ločimo s piko in dodamo oklepaje, podobno kot pri atributih.
 
 Primer:
 
@@ -1313,13 +1313,13 @@ Metode se obnašajo enako kot funkcije s tem, da lahko dodatno operirajo na obje
 
 #### Dedovanje (inheritence)
 
-Pri razredih lahko uporabljamo dedovanje. Kot namiguje ime, lahko določen razred deduje po nekem drugem razredu. Kadar razred deduje ta prevzame vse metode in atribute, ki jih razred po katerem dedujemo ima. 
+Pri razredih lahko uporabljamo dedovanje. Kot namiguje ime, lahko določen razred deduje po nekem drugem razredu. Kadar razred deduje, ta prevzame vse metode in atribute, ki jih razred po katerem dedujemo ima. 
 
-Dedovanje pišemo v definiciji razreda, in sicer v oklepaje poleg imena napišemo ime razreda po kateremu dedujemo. 
+Dedovanje pišemo v definiciji razreda, in sicer v oklepajih. Poleg imena, napišemo ime razreda po kateremu dedujemo. 
 
-Če bi na primeru radi naredili razred, ki deduje po razredu oseba oz. tisti razred razširi. Novi razred bomo poimenovali delavec in imel bo dodatne atribute in metode. 
+Recimo, da bi radi naredili  razred, ki deduje po razredu oseba oz. tisti razred razširi. Novi razred bomo poimenovali delavec in imel bo dodatne atribute in metode. 
 
-Pri tem moramo biti pozorni, saj razredu Oseba podajamo parametre, in če bi želeli ustvariti objekt Delavec, ki privzame določene atribute iz razreda Oseba moramo te parametre tudi pri novem razredu podati. To naredimo z stavkom <code>super().__init__(ime, priimek, starost)</code> znotraj konstruktorja <code>__init__</code>, in pri parametrih init podamo še parametre razreda Oseba.
+Pri tem moramo biti pozorni, saj razredu Oseba podajamo parametre. Če bi želeli ustvariti objekt Delavec, ki privzame določene atribute iz razreda Oseba moramo te parametre tudi novem razredu podati. To naredimo s stavkom <code>super().__init__(ime, priimek, starost)</code> znotraj konstruktorja <code>__init__</code>, in pri parametrih init podamo še parametre razreda Oseba.
 
 ```
 class Delavec(Oseba):
