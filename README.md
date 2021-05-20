@@ -22,7 +22,7 @@ Passcode: 0WYJk0
 
 ## Novice
 
-Četrta predavanja bodo v torek(18.5.2021) ob 16:00 na zgornjem zoom naslovu.
+Peta predavanja bodo v četrtek(20.5.2021) ob 16:00 na zgornjem zoom naslovu.
 
 Python si lahko poberete na spodnji povezavi, vklučuje tudi tekstovni urejevalnik IDLE, ki ga bomo uporabljali med predavanji:
 
