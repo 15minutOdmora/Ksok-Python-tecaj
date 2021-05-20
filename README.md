@@ -83,6 +83,9 @@ Izpiše:
 **********
 ```
 
+Rešitev je objavljena v datoteki izrisi_kvadrat.py ki se nahaja v mapi koda/Predavanje 4
+
+
 ---
 
 ## Potek 
@@ -1033,7 +1036,7 @@ print(pomnozi_z_pet(4))
 ```
 
 
-### Torek 18.5.2021 - Objektno programiranje 
+### Torek 18.5.2021 - Ponovitev naučenega, Lambda funkcije in naivna igra Križec Krožec 
 
 #### Lambda funkcije (lambdas)
 
@@ -1063,15 +1066,153 @@ print(rez)
 
 #### Rešitev naloge izrisovanja kvadrata
 
-Tukaj se bo po današnjih predavanjih pojavla rešitev.
+Rešitev naloge izrisovanja kvadrata iz znakov, poljubne dolžine stranic in poljubne šrine stranic.
+
+**Navodila:**
+
+Napiši funkcijo ki sprejme dve števili n in k in izpiše kvadrat znakov "*"  velikosti n x n, debeline(stranic) k. V primeru, da je debelina stranic večja od dolžine stranice, naj je kvadrat poln, oz. če je 2k >= n.
+
+**Rešitev:**
+
+```python
+def izrisi_kvadrat(n, k):
+    """
+    Funkcija izrise kvadrat iz znakov *, z stranicami velikosti n
+    debeline k
+    """
+    zgoraj = k
+    spodaj = n - k
+    for i in range(n):
+        if i >= zgoraj and i < spodaj:
+            print("*" * k + " " * (n - 2 * k) + "*" * k)
+        else:
+            print("*" * n)
+```
+
+Enako lahko rešimo z uporabo "list comprehension", kjer seznam definiramo kar z for zanko, nakoncu pa seznam zlepimo skupaj.
+
+```python
+def izrisi_kvadrat_oneliner(n, k):
+    """
+    Funkcija izrise kvadrat iz znakov *, z stranicami velikosti n
+    debeline k
+    """
+    print("".join(["*"*k+" "*(n-2*k)+"*"*k+"\n" if (i>=k and i<n-k) else "*"*n+"\n" for i in range(n)]))
+```
+
+Metoda <code>join(seznam)</code> elemente v seznamu zlepi skupaj v niz tako, da med posameznimi znaki nastopi prazen niz <code>""</code> na kateremu kličemo metodo.
+
+Zgornje lahko z uporabo lambda funkcije zapišemo dobesedno v eni vrstici:
+
+```python
+izrisi_kvadrat_dobesedno_oneliner = lambda n, k: "".join(["*"*k+" "*(n-2*k)+"*"*k+"\n" if (i>=k and i<n-k) else "*"*n+"\n" for i in range(n)])
+```
+
+Pri obeh enovrstičnih rešitvah uporabljamo znak <code>"\n"</code> kar predstavlja prelom v novo vrstico. 
 
 
 #### Križec krožec
 
-Tukaj se bo pojavila končna verzija igre križec krožec.
+Med predavanji smo z naučenim znanjem ustvarili igro Križec Krožec. 
+
+```python
+# Igra krizec krozec
+
+polje = [[" ", " ", " "], [" ", " ", " "], [" ", " ", " "]]
+# Polje:
+#          1.st  2.st  3.st
+#  1. vr   [" ", " ", " "]
+#  2. vr   [" ", " ", " "]
+#  3. vr   [" ", " ", " "]
+zmagovalni_znak = ""
+konec_igre = False
+
+krog = 1
+while krog < 9:
+    # Izpišemo polje
+    print("{}|{}|{}".format(polje[0][0], polje[0][1], polje[0][2]))
+    print("-----")
+    print("{}|{}|{}".format(polje[1][0], polje[1][1], polje[1][2]))
+    print("-----")
+    print("{}|{}|{}".format(polje[2][0], polje[2][1], polje[2][2]))
+
+    # Preberemo ukaz igralca
+    if krog % 2 == 0:
+        ukaz = input("Na vrsti je 2. igralec: ")
+        znak = "X"
+    else:
+        ukaz = input("Na vrsti je 1. igralec: ")
+        znak = "O"
+
+    # Iz ukaza dolocimo vrstico in stolpec
+    vrstica = int(ukaz[0]) - 1
+    stolpec = int(ukaz[1]) - 1
+    # Spremenimo polje na doloceni vrsticici in stolpcu
+    polje[vrstica][stolpec] = znak
+
+    # Pregledamo ce je kdo dosegel 3 v vrsti
+    # Ustvarimo seznam stolpcev, da je bolj pregledno
+    stolpci = [[], [], []]
+    # Gremo po vrsticah
+    for vrstica in polje:
+        # Za vsako vrstico preverimo ce vsebuje 3 enake znake
+        # Tako da jo pretvorimo v mnozico
+        if len(set(vrstica)) == 1 and vrstica[0] != " ":
+            zmagovalni_znak = vrstica[0]
+            konec_igre = True
+        # Sproti ustvarjamo transponirano polje oz. seznam stolpcev
+        # Posameznemu stolpcu dodamo znak iz polja
+        stolpci[0].append(vrstica[0])
+        stolpci[1].append(vrstica[1])
+        stolpci[2].append(vrstica[2])
+    # Preverimo še stolpce
+    for stolpec in stolpci:
+        # Za vsak stolpec preverimo ce vsebuje 3 enake znake
+        # Tako da ga pretvorimo v mnozico
+        if len(set(stolpec)) == 1 and stolpec[0] != " ":
+            zmagovalni_znak = stolpec[0]
+            konec_igre = True
+    # Na dolgo preverimo še dve diagonali
+    znak = polje[0][0]  # Znak v levem zgornjem kotu
+    if polje[1][1] == znak and polje[2][2] == znak and znak != " ":
+        zmagovalni_znak = znak
+        konec_igre = True
+    znak = polje[0][2]  # Znak v desnem zgornjem kotu
+    if polje[1][1] == znak and polje[2][0] == znak and znak != " ":
+        zmagovalni_znak = znak
+        konec_igre = True
+
+    if konec_igre:
+        break
+    
+    krog += 1
 
 
-### Četrtek 20.5.2021 - Uvod v knjižnice in njihovo uporabo
+# Ko pridemo ven iz zanke se enkrat izpisemo polje in dolocimo zmagovalca
+print("{}|{}|{}".format(polje[0][0], polje[0][1], polje[0][2]))
+print("-----")
+print("{}|{}|{}".format(polje[1][0], polje[1][1], polje[1][2]))
+print("-----")
+print("{}|{}|{}".format(polje[2][0], polje[2][1], polje[2][2]))
+    
+if zmagovalni_znak == "O":
+    print("Zmagal je 1. igralec!")
+elif zmagovalni_znak == "X":
+    print("Zmagal je 2. igralec!")
+else:
+    print("Igra je bila izenacena!")
+```
+
+
+### Četrtek 20.5.2021 - Objektno programiranje, Razredi in objekti
+
+- Razredi (classes)
+
+- Dedovanje (inheritence)
+
+
+
+### Torek 25.5.2021 - Uvod v knjižnice in njihovo uporabo
 
 - Razredi (classes)
 - Dedovanje (inheritence)
@@ -1079,8 +1220,4 @@ Tukaj se bo pojavila končna verzija igre križec krožec.
 - Moduli in uvažanje (modules and imports)
 - PIP 
 - Nekaj integriranih knjižnjic: Date, Math, JSON, OS
-
-
-### Torek 25.5.2021 - Uporaba zunanjih knjižnjic, prvi celotni program
-
 
