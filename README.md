@@ -10,7 +10,7 @@ Liam Mislej
   **zoom:** 
 
 Topic: Kšok - Python
-Time: May 18, 2021 04:00 PM Budapest
+Time: May 20, 2021 04:00 PM Budapest
 
 Join Zoom Meeting
 https://uni-lj-si.zoom.us/j/8856744186?pwd=L3VqWmduV1VwN0QyanRxaHBvbHE4Zz09
@@ -1206,16 +1206,173 @@ else:
 
 ### Četrtek 20.5.2021 - Objektno programiranje, Razredi in objekti
 
-- Razredi (classes)
+#### Razredi (classes)
 
-- Dedovanje (inheritence)
+Razred si najlažje predstavljamo kot nek načrt za določene objekte. Razredi vsebujejo atribute(podatki shranjeni v spremenljivkah razreda) in metode(funkcije, ki izvajajo operacije nad samim objektom)
+
+Razred definiramo z besedo <code>class</class>, nakar podamo ime razreda kot spremenljivko ter dvopičje, vse kar spada v razred indentiramo. V Pythonu imena razredov pišemo tako, da je prva črka posamezne besede napisana z veliko, posamezne besede pa ne ločujemo z podčrtaji. Temu pravilu pravimo CamelCase. 
+
+Če sedaj za primer razreda definiramo razred Oseba in mu podamo nekaj atributov, ki jih pišemo enako kot spremenljivke. 
+
+```python
+class Oseba:
+    ime = "Liam"
+    priimek = "Mislej"
+```
+
+Če bi želeli do podatkov dostopati moremo razred prvo inicializirati. To storimo tako, da z spremenljivko enačimo ime razreda z oklepaji. Kadar inicializiramo razred pravimo temu objekt. 
+
+```python
+o1 = Oseba()
+```
+Tako je v sapremenljivki o1 shranjen objekt razreda Oseba. 
+
+Če želimo do posameznih atributov dostopati, zraven spremenljivke objekta napišemo ime atributa ter povežemo z piko.
+```python
+ime_o1 = o1.ime
+priimek_o1 = o1.priimek
+
+print(ime_o1, priimek_o1)
+
+# Izpiše:
+Liam Mislej
+```
+
+Zgornji primer ni kaj dosti praktičen, saj vsakič ko naredimo objekt tipa Oseba ima ta pri atributih ime in priimek vrednosti "Liam" in "Mislej". 
+
+Za to nastopi konstruktor <code>__init__</code>. Tega v razredu definiramo podobno kot funkcije. In je pomembno vedeti, da se izvede kadar objekt inicializiramo. 
+Funkcijam definiranim znotraj razredov pravimo metode(o temu malo kasneje). Konstruktorju <code>__init__</code> lahko podajamo parametre, tukaj nastopi nekolikor nenavadna sintaksa. 
+
+Torej če bi zgornji primer razširili, da lahko razredu podamo določene vrednosti:
+
+```python
+class Oseba:
+    def __init__(self, ime, priimek):
+        self.ime = ime
+        self.priimek = priimek
+```
+Opazimo novo spremenljivko self. Ta se nanaša na sam objekt, znotraj razreda, kadar želimo poizvedovati po določenih atributih pred imenom pišemo še self. Sicer bi lahko namesto self pisali karkoli vendar je taka navada in je prav, da se je držimo. 
+
+Prvi parameter v konstruktorju <code>__init__</code> je namenjen imenu spremenljivke, ki se nanaša na sam objekt, v našem primeru na self.
+
+Če inicializiramo en objekt tega tipa in želimo dostopati, do kakšnega atributa to storimo enako kot v prejšnjem primeru. 
+```python
+o1 = Oseba("Janez", "Novak")  # prarameter ime = "Janez", priimek = "Novak"
+
+print(o1.ime)
+print(o1.priimek)
+
+# Izpiše:
+Janez
+Novak
+```
+
+Parameter, ki je na mestu <code>self</code> v definiciji razreda oz. konstruktorju <code>__init__</code>, ne podajamo kadar inicializiramo objekt.
+
+**Metode:**
+
+Metode so funkcije definirane v samem razredu. Pišemo jih enako kot funkcije. Če jim podamo parameter self lahko metoda manipulira z atributi razreda. V kolikor tega ne podamo metoda funkcionira kot navadna funkcija, le da jo kličemo malenkost drugače. 
 
 
+Če zgornjemu razredu dodamo atribut starost in metodo <code>rojstni_dan</code>, ki objektu poveča vrednost spremenljivke starost za 1. 
+
+```python
+class Oseba:
+    def __init__(self, ime, priimek, starost):
+        self.ime = ime
+        self.priimek = priimek
+        self.starost = starost
+        
+    def rojstni_dan(self):  # Sprejme parameter self, saj bo metoda spreminjala atribute
+        """
+        Metoda postara osebo za 1 leto
+        """
+        self.starost += 1
+```
+
+Če želimo metodo uporabiti oz. klicati na že obstoječem objektu jo napišemo zraven spremenljivke objekta, ločimo z piko in dodamo oklepaje. Podobno kot pri atributih.
+
+Primer:
+
+```python
+
+o1 = Oseba("Janez", "Novak", 42)
+
+print(o1.starost)
+
+o1.rojstni_dan()  # Postaramo za 1 leto
+
+print(o1.starost)
+
+# Izpiše:
+42
+43
+```
+
+Metode se obnašajo enako kot funkcije s tem, da lahko dodatno operirajo na objektu. Torej z metodami lahko vračamo vrednosti in jim podajamo parametre. 
+
+#### Dedovanje (inheritence)
+
+Pri razredih lahko uporabljamo dedovanje. Kot namiguje ime, lahko določen razred deduje po nekem drugem razredu. Kadar razred deduje ta prevzame vse metode in atribute, ki jih razred po katerem dedujemo ima. 
+
+Dedovanje pišemo v definiciji razreda, in sicer v oklepaje poleg imena napišemo ime razreda po kateremu dedujemo. 
+
+Če bi na primeru radi naredili razred, ki deduje po razredu oseba oz. tisti razred razširi. Novi razred bomo poimenovali delavec in imel bo dodatne atribute in metode. 
+
+Pri tem moramo biti pozorni, saj razredu Oseba podajamo parametre, in če bi želeli ustvariti objekt Delavec, ki privzame določene atribute iz razreda Oseba moramo te parametre tudi pri novem razredu podati. To naredimo z stavkom <code>super().__init__(ime, priimek, starost)</code> znotraj konstruktorja <code>__init__</code>, in pri parametrih init podamo še parametre razreda Oseba.
+
+```
+class Delavec(Oseba):
+    def __init__(self, delovna_leta, ime, priimek, starost):
+        super().__init__(ime, priimek, starost)
+        self.delovna_leta = delovna_leta  # Atribut predstavlja število let ko je oseba delala, to bo torej celo število int
+        self.zaposlen = False  # Novi atribut, ki pove če je oseba trenutno zaposlena, to bo binarna vrednost bool
+        
+    def zaposli(self):
+        """
+        Metoda nastavi atribut zaposlen na True
+        """
+        self.zaposlen = True
+        
+    def odpusti(self):
+        """
+        Metoda nastavi atribut zaposlen na False
+        """
+        self.zaposlen = False
+        
+    def opisi(self):
+        """
+        Metoda izpiše niz s katerim opiše objekt oz. osebo, ki je hkrati delavec
+        """
+        if self.zaposlen:
+            zap = "je"
+        else:
+            zap = "ni"
+        print("Delavec {} {} {} zaposlen in je v življenju delal {} let.".format(self.ime, self.priimek, zap, self.delovna_leta))
+```
+
+Če sedaj ustvarimo objekt in kličemo metode definirane v razredu Delavec in tiste def. v razredu Oseba:
+
+```python
+o = Delavec(ime="Janez", priimek="Novak", starost=21, delovna_leta=2)
+
+o.opisi()
+o.zaposli()
+o.opisi()
+print(o.starost)
+o.rojstni_dan()
+print(o.starost)
+
+# Izpiše:
+
+Delavec Janez Novak ni zaposlen in je v življenju delal 2 let.
+Delavec Janez Novak je zaposlen in je v življenju delal 2 let.
+21
+22
+```
 
 ### Torek 25.5.2021 - Uvod v knjižnice in njihovo uporabo
 
-- Razredi (classes)
-- Dedovanje (inheritence)
 - Obseg v pythonu, funkcije v funkcijah
 - Moduli in uvažanje (modules and imports)
 - PIP 
