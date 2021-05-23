@@ -1315,10 +1315,21 @@ Delavec Janez Novak je zaposlen in je v življenju delal 2 let.
 22
 ```
 
-### Torek 25.5.2021 - Uvod v knjižnice in njihovo uporabo
+### Torek 25.5.2021 - Knjižnice, branje in pisanje v datoteke, matplotlib
 
-- Obseg v pythonu, funkcije v funkcijah
+#### PIP
+
+PIP je Pythonov paketni menedžer (package manager), vsebuje vse objavljene pakete, ki si jih lahko poberemo.
+
+Paketi so skupki modulov, kjer ima vsak modul neko uporabnost. Če želimo analizirati podatke lahko(med drugim) poberemo paket Pandas, če nas zanima ustvarjanje video iger za to obstaja PyGame, za manipulacijo slik obstaja paket PIL ali pa OpenCV... Na kratko nam paketi podajajo neke funcionalnosti, ki nam delo olajšajo. Če bi želeli izrisati histogram nebi to na novo izumli ampak samo pobrali knjižnjico oz paket matplotlib.
+
+#### Pobiranje paketov in knjižnjic
+
+Od Pythona 3.4 dalje je PIP vsebovan v samem Pythonu, ko le tega poberemo. 
+
+
 - Moduli in uvažanje (modules and imports)
-- PIP 
 - Nekaj integriranih knjižnjic: Date, Math, JSON, OS
+- Branje in pisanje v datoteke
+- matplotlib
 
