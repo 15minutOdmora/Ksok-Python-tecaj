@@ -10,7 +10,7 @@ Liam Mislej
   **zoom:** 
 
 Topic: Kšok - Python
-Time: May 20, 2021 04:00 PM Budapest
+Time: May 25, 2021 04:00 PM Budapest
 
 Join Zoom Meeting
 https://uni-lj-si.zoom.us/j/8856744186?pwd=L3VqWmduV1VwN0QyanRxaHBvbHE4Zz09
@@ -22,69 +22,13 @@ Passcode: 0WYJk0
 
 ## Novice
 
-Peta predavanja bodo v četrtek(20.5.2021) ob 16:00 na zgornjem zoom naslovu.
+Zadnja predavanja bodo v torek(25.5.2021) ob 16:00 na zgornjem zoom naslovu.
 
 Python si lahko poberete na spodnji povezavi, vklučuje tudi tekstovni urejevalnik IDLE, ki ga bomo uporabljali med predavanji:
 
 [https://www.python.org/](https://www.python.org/)
 
 Greste pod downloads in si naložite najnovejšo verzijo, oz. verzijo 3.8 v kolikor nimate Windows 10.
-
-### Naloga:
-
-Napiši funkcijo ki sprejme dve števili n in k in izpiše kvadrat znakov "*"  velikosti n x n, debeline(stranic) k. V primeru, da je debelina stranic večja od dolžine stranice, naj je kvadrat poln, oz. če je 2k >= n.
-
-**Nasvet:** Nize lahko množimo z celimi števili.
-
-Primeri pravilno delujoče funkcije:
-
-```python
-izrisi_kvadrat(4, 1)
-Izpiše:
-****
-*  *
-*  *
-****
-
-izrisi_kvadrat(7, 2)
-Izpiše:
-*******
-*******
-**   **
-**   **
-**   **
-*******
-*******
-
-izrisi_kvadrat(10, 2)
-Izpiše:
-**********
-**********
-**      **
-**      **
-**      **
-**      **
-**      **
-**      **
-**********
-**********
-
-izrisi_kvadrat(10, 10)
-Izpiše:
-**********
-**********
-**********
-**********
-**********
-**********
-**********
-**********
-**********
-**********
-```
-
-Rešitev je objavljena v datoteki izrisi_kvadrat.py ki se nahaja v mapi koda/Predavanje 4
-
 
 ---
 
@@ -127,7 +71,7 @@ print("Hello world")
 ```python
 # To je pravilno indentirano
 if True:
-  print("Hello world")
+    print("Hello world")
 ```
 
 Primer iste kode v programskem jeziku Java kjer se bloke deli z uporabo (<code>{}</code>):
