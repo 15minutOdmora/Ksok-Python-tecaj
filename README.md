@@ -1421,9 +1421,34 @@ with open("bdp_na_preb.csv", "r") as f:
         
 # Izpiše vse vrstice v datoteki, kjer je vsaka vrstica seznam podatkov.
 ```
-<code>csv.reader()</code> vrne seznam vseh vrstic, kjer je podatek v vsakem stolpcu element na svojem mestu v datoteki.
+<code>csv.reader()</code> vrne seznam vseh vrstic, kjer vsak element predstavlja podatek na določenem stolpcu v datoteki.
 
 
+#### Matplotlib 
 
-- matplotlib
+Matplotlib je Python knjižnjica za izrisovanje podatkov, od grafov do histogramov in še veliko več. Uporabljali bomo modul pyplot. Po tem, ko smo knjižnjico pobrali z uporabo PIP, lahko modul v programu uporabimo tako, da ga uvozimo in shranimo v spremenljivko <code>plt</code> z ukazom <code>as</code>:
 
+```python
+from matplotlib import pyplot as plt
+```
+
+**Risanje grafa** 
+
+Za izrisovanje grafa uporabimo funkcijo <code>plot(x, y)</code>, kjer je x seznam x vrednosti točk, y pa seznam y vrednosti točk.
+
+Funkcijo kličemo tako, da ime pišemo zraven spremenljivke <code>plt</code>. 
+
+Primer:
+
+```python
+x = [0, 1, 2, 3, 4]
+y = [2, 3, 2, 3, 1]
+
+plt.plot(x, y)
+
+plt.show()  # Če želmo, da se graf prikaže kličemo plt.show()
+```
+
+Zgornje nam izriše sledeči graf:
+
+![Slika_grafa](slike/slika1.png)
