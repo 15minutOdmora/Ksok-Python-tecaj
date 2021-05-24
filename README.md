@@ -1330,6 +1330,75 @@ Od Pythona 3.4 dalje je PIP vsebovan v samem Pythonu, ko le tega poberemo.
 
 - Moduli in uvažanje (modules and imports)
 - Nekaj integriranih knjižnjic: Date, Math, JSON, OS
-- Branje in pisanje v datoteke
+
+#### Branje in pisanje v datoteke
+
+Med predavanji bomo uporabljali podatke iz SiStat, konkretno: 
+
+**Bruto domači proizvod na prebivalca, Slovenia, letno** 
+https://pxweb.stat.si/SiStatData/pxweb/sl/Data/-/H280S.px
+Pobrana datoteka tipa csv(ločeno z vejico in vsebuje glavo) v samem programu preimenovana v bdp_na_preb.csv 
+
+**Prebivalstvo po izbranih starostnih skupinah in spolu, statistične regije, Slovenija, polletno**
+https://pxweb.stat.si/SiStatData/pxweb/sl/Data/-/05C2006S.px
+Poberemo vse podatke za 1. polletje leta 2021.
+Pobrana datoteka tipa csv(ločeno z vejico in vsebuje glavo) v samem programu preimenovana v preb_po_star_in_spol.csv 
+
+Datoteke lahko odpremo na različne načine(preden lahko iz datoteke beremo mora biti le ta odprta), najbolj pogosta metoda za to je z stavkom <code>with open("pot/do/datoteke/test.txt", "r/w/a") as ime_spremenljivke:</code>. Če se datoteka nahaja v isti mapi kot naš program, lahko navedemo le ime datoteke.
+
+Konkretno na primeru če želimo odpreti datoteko <code>test.txt</code>:
+
+```python
+with open("test.txt", 'r') as file:
+    # Tukaj lahko potem upravljamo z datoteko
+```
+opazimo drugi parameter pri <code>open<c/ode> tam navedemo, kaj bomo z datoteko počeli:
+  - 'r' read, le brali podatke
+  - 'w' write, pisali v datoteko nove podatke oz. vrstice
+  - 'a' append, dodajali na konec datoteke nove podatke
+  
+Če želimo prebrati eno vrstico lahko uporabimo metodo <code>readline</code>:
+
+```python
+with open("test.txt", 'r') as file:
+    # Tukaj lahko potem upravljamo z datoteko
+    line = file.readline()
+    print(line)
+    
+Izpiše niz prve vrstice v datoteki
+```
+
+Če želimo prebrati vse vrstice uporabimo metodo <code>readline</code>:
+
+```python
+with open("test.txt", 'r') as file:
+    # Tukaj lahko potem upravljamo z datoteko
+    lines = file.readlines()
+    print(line)
+    
+Izpiše seznam kjer je vsaka vrstica en element
+```
+
+Ker bomo podatke brali iz datotek tipa csv moramo najprej uvoziti integrirano knjižnico <code>csv</code>.
+
+```python
+import csv
+```
+Ko beremo datoteke tipa csv nam ta knjižnjica olajša branje tako, da ignroira določene nevidne znake, ...
+
+Podatke iz odprte datoteke nato preberemo z ukazom:
+
+```python
+with open("bdp_na_preb.csv", "r") as f:
+    data = csv.reader(f)
+    for row in data:
+        print(row)
+        
+# Izpiše vse vrstice v datoteki, kjer je vsaka vrstica seznam podatkov.
+```
+<code>csv.reader()</code> vrne seznam vseh vrstic, kjer je podatek v vsakem stolpcu element na svojem mestu v datoteki.
+
+
+
 - matplotlib
 
