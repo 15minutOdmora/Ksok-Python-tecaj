@@ -1321,13 +1321,13 @@ Delavec Janez Novak je zaposlen in je v življenju delal 2 let.
 
 PIP je Pythonov paketni menedžer (package manager), vsebuje vse objavljene pakete, ki si jih lahko poberemo.
 
-Paketi so skupki modulov, kjer ima vsak modul neko uporabnost. Če želimo analizirati podatke lahko(med drugim) poberemo paket Pandas, če nas zanima ustvarjanje video iger za to obstaja PyGame, za manipulacijo slik obstaja paket PIL ali pa OpenCV... Na kratko nam paketi podajajo neke funcionalnosti, ki nam delo olajšajo. Če bi želeli izrisati histogram nebi to na novo izumli ampak samo pobrali knjižnjico oz paket matplotlib.
+Paketi so skupki modulov, kjer ima vsak modul neko uporabnost. Če želimo analizirati podatke lahko(med drugim) poberemo paket Pandas, če nas zanima ustvarjanje video iger za to obstaja PyGame, za manipulacijo slik obstaja paket PIL ali pa OpenCV... Na kratko nam paketi podajajo neke funcionalnosti, ki nam delo olajšajo. Če bi želeli izrisati histogram ne bi to na novo izumljali ampak bi samo pobrali knjižnjico oz. paket matplotlib.
 
 #### Pobiranje paketov in knjižnjic
 
-Od Pythona 3.4 dalje je PIP vsebovan v samem Pythonu, ko le tega poberemo. 
+Od Pythona 3.4. dalje je PIP vsebovan v samem Pythonu, ko ga prenesemo. 
 
-Ukaze, ki jih omogoča PIP lahko preverimo tako da v ukazno vrstico sistema(cmd na Windows sistemu) vpišemo pip. 
+Ukaze, ki jih omogoča PIP lahko preverimo tako, da v ukazno vrstico sistema(cmd na Windows sistemu) vpišemo pip. 
 
 Primer:
 
@@ -1346,8 +1346,8 @@ Kjer podamo pravo ime knjižnjice. Tako se nam knjižnjica naloži na računalni
 
 #### Moduli in uvažanje (modules and imports)
 
-Ko smo določen paket/modul/knjižnjico pobrali z ukazom pip, lahko v kodi funkcije, razrede, ... ki jih ta ponuja uporabljamo. 
-Če želimo v naši .py datoteki knjižnjico uporabiti moramo to Pythonu povedati, to storimo z ukazom <code>import</code> kjer zraven podamo ime knjižnjice. 
+Ko smo določen paket/modul/knjižnjico pobrali z ukazom pip, lahko v kodi uporabljamo vse funkcije/razrede/karkoli, ki jih knjižnjica ponuja. 
+Če želimo v naši .py datoteki uporabiti knjižnjico moramo to Pythonu povedati z ukazom <code>import</code> ,kjer zraven podamo ime knjižnjice. 
 
 Primer:
 
@@ -1364,24 +1364,24 @@ Med predavanji bomo uporabljali podatke iz SiStat, konkretno:
 **Bruto domači proizvod na prebivalca, Slovenia, letno** 
 
 https://pxweb.stat.si/SiStatData/pxweb/sl/Data/-/H280S.px
-Pobrana datoteka tipa csv(ločeno z vejico in vsebuje glavo) v samem programu preimenovana v bdp_na_preb.csv 
+Pobrana datoteka tipa csv(ločeno z vejico in vsebuje glavo), v samem programu preimenovana v bdp_na_preb.csv 
 
 **Prebivalstvo po izbranih starostnih skupinah in spolu, statistične regije, Slovenija, polletno**
 
 https://pxweb.stat.si/SiStatData/pxweb/sl/Data/-/05C2006S.px
-Poberemo vse podatke za 1. polletje leta 2021.
+Poberemo vse podatke za 1. polletje leta 2020.
 Pobrana datoteka tipa csv(ločeno z vejico in vsebuje glavo) v samem programu preimenovana v preb_po_star_in_spol.csv 
 
-Datoteke lahko odpremo na različne načine(preden lahko iz datoteke beremo mora biti le ta odprta), najbolj pogosta metoda za to je z stavkom <code>with open("pot/do/datoteke/test.txt", "r/w/a") as ime_spremenljivke:</code>. Če se datoteka nahaja v isti mapi kot naš program, lahko navedemo le ime datoteke.
+Datoteke lahko odpremo na različne načine(preden lahko iz datoteke beremo mora biti odprta), najbolj pogosta metoda je s stavkom <code>with open("pot/do/datoteke/test.txt", "r/w/a") as ime_spremenljivke:</code>. Če se datoteka nahaja v isti mapi kot naš program, lahko navedemo le ime datoteke.
 
-Konkretno na primeru če želimo odpreti datoteko <code>test.txt</code>:
+Če želimo odpreti datoteko <code>test.txt</code>:
 
 ```python
 with open("test.txt", 'r') as file:
     # Tukaj lahko potem upravljamo z datoteko
 ```
 
-opazimo drugi parameter pri <code>open<c/ode> tam navedemo, kaj bomo z datoteko počeli:
+Pri drugem parameteru pri <code>open<c/ode> navedemo kaj bomo z datoteko počeli:
   - 'r' read, le brali podatke
   - 'w' write, pisali v datoteko nove podatke oz. vrstice
   - 'a' append, dodajali na konec datoteke nove podatke
@@ -1397,7 +1397,7 @@ with open("test.txt", 'r') as file:
 Izpiše niz prve vrstice v datoteki
 ```
 
-Če želimo prebrati vse vrstice uporabimo metodo <code>readline</code>:
+Če želimo prebrati vse vrstice, uporabimo metodo <code>readline</code>:
 
 ```python
 with open("test.txt", 'r') as file:
@@ -1405,16 +1405,16 @@ with open("test.txt", 'r') as file:
     lines = file.readlines()
     print(line)
     
-Izpiše seznam kjer je vsaka vrstica en element
+Izpiše seznam, kjer je vsaka vrstica en element
 ```
 
-Ker bomo podatke brali iz datotek tipa csv moramo najprej uvoziti integrirano knjižnico <code>csv</code>.
+Ker bomo podatke brali iz datotek tipa csv, moramo najprej uvoziti integrirano knjižnico <code>csv</code>.
 
 ```python
 import csv
 ```
 
-Ko beremo datoteke tipa csv nam ta knjižnjica olajša branje tako, da ignroira določene nevidne znake, ...
+Ko beremo datoteke tipa csv, nam ta knjižnjica olajša branje tako, da ignroira določene nevidne znake ...
 
 Podatke iz odprte datoteke nato preberemo z ukazom:
 
