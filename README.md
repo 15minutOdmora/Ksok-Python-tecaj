@@ -1327,9 +1327,34 @@ Paketi so skupki modulov, kjer ima vsak modul neko uporabnost. Če želimo anali
 
 Od Pythona 3.4 dalje je PIP vsebovan v samem Pythonu, ko le tega poberemo. 
 
+Ukaze, ki jih omogoča PIP lahko preverimo tako da v ukazno vrstico sistema(cmd na Windows sistemu) vpišemo pip. 
 
-- Moduli in uvažanje (modules and imports)
-- Nekaj integriranih knjižnjic: Date, Math, JSON, OS
+Primer:
+
+```
+C:\Users\Liam>pip
+```
+
+Če želimo določeno knjižnjico pobrati napišemo:
+
+```
+C:\Users\Liam>pip install matplotlib
+```
+
+Kjer podamo pravo ime knjižnjice. Tako se nam knjižnjica naloži na računalnik oz. tam kjer se Python nahaja.
+
+
+#### Moduli in uvažanje (modules and imports)
+
+Ko smo določen paket/modul/knjižnjico pobrali z ukazom pip, lahko v kodi funkcije, razrede, ... ki jih ta ponuja uporabljamo. 
+Če želimo v naši .py datoteki knjižnjico uporabiti moramo to Pythonu povedati, to storimo z ukazom <code>import</code> kjer zraven podamo ime knjižnjice. 
+
+Primer:
+
+```python
+import csv
+```
+Če imamo v isti mapi več datotek .py v katerih se nahajajo funkcije lahko v drugih datotekah te funkcije uporabljamo tako, da jih najprej uvozimo z zgornjim ukazom.
 
 #### Branje in pisanje v datoteke
 
