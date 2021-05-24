@@ -1354,6 +1354,7 @@ Primer:
 ```python
 import csv
 ```
+
 Če imamo v isti mapi več datotek .py v katerih se nahajajo funkcije lahko v drugih datotekah te funkcije uporabljamo tako, da jih najprej uvozimo z zgornjim ukazom.
 
 #### Branje in pisanje v datoteke
@@ -1361,10 +1362,12 @@ import csv
 Med predavanji bomo uporabljali podatke iz SiStat, konkretno: 
 
 **Bruto domači proizvod na prebivalca, Slovenia, letno** 
+
 https://pxweb.stat.si/SiStatData/pxweb/sl/Data/-/H280S.px
 Pobrana datoteka tipa csv(ločeno z vejico in vsebuje glavo) v samem programu preimenovana v bdp_na_preb.csv 
 
 **Prebivalstvo po izbranih starostnih skupinah in spolu, statistične regije, Slovenija, polletno**
+
 https://pxweb.stat.si/SiStatData/pxweb/sl/Data/-/05C2006S.px
 Poberemo vse podatke za 1. polletje leta 2021.
 Pobrana datoteka tipa csv(ločeno z vejico in vsebuje glavo) v samem programu preimenovana v preb_po_star_in_spol.csv 
@@ -1377,6 +1380,7 @@ Konkretno na primeru če želimo odpreti datoteko <code>test.txt</code>:
 with open("test.txt", 'r') as file:
     # Tukaj lahko potem upravljamo z datoteko
 ```
+
 opazimo drugi parameter pri <code>open<c/ode> tam navedemo, kaj bomo z datoteko počeli:
   - 'r' read, le brali podatke
   - 'w' write, pisali v datoteko nove podatke oz. vrstice
@@ -1409,6 +1413,7 @@ Ker bomo podatke brali iz datotek tipa csv moramo najprej uvoziti integrirano kn
 ```python
 import csv
 ```
+
 Ko beremo datoteke tipa csv nam ta knjižnjica olajša branje tako, da ignroira določene nevidne znake, ...
 
 Podatke iz odprte datoteke nato preberemo z ukazom:
@@ -1421,6 +1426,7 @@ with open("bdp_na_preb.csv", "r") as f:
         
 # Izpiše vse vrstice v datoteki, kjer je vsaka vrstica seznam podatkov.
 ```
+
 <code>csv.reader()</code> vrne seznam vseh vrstic, kjer vsak element predstavlja podatek na določenem stolpcu v datoteki.
 
 
@@ -1451,4 +1457,4 @@ plt.show()  # Če želmo, da se graf prikaže kličemo plt.show()
 
 Zgornje nam izriše sledeči graf:
 
-![Slika_grafa](slike/slika1.png)
+![Slika_grafa](Slike/slika1.png)
