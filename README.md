@@ -58,7 +58,6 @@ Vsi uporabljeni oz. napisani programi se nahajajo v mapi Koda.
 Python je interpretni visokoravni večnamenski programski jezik. Interpretni (interpreted) pomeni, da se napisana koda izvaja postopoma brez potrebe po kompilaciji programa. Pomembno je vedeti, da se koda izvaja zaporedoma po vrsticah (prvo se izvede prva vrstica, nato druga, tretja, ...)
 
 
-
 Nekateri programski jeziki uporabljajo razne znake (<code>{ }, ;, ...</code>) za ločevanje blokov kode. Pri Pythonu to ni tako; uporablja se indentacijo (indente) za ločevanje blokov. Indent je le niz, ki ga (ponavadi) sestavljajo štirje presledki, Krajše napišemo oz. natipkamo z tipko <code>Tab</code>, primer: 
 
 Python  
@@ -1321,13 +1320,13 @@ Delavec Janez Novak je zaposlen in je v življenju delal 2 let.
 
 PIP je Pythonov paketni menedžer (package manager), vsebuje vse objavljene pakete, ki si jih lahko poberemo.
 
-Paketi so skupki modulov, kjer ima vsak modul neko uporabnost. Če želimo analizirati podatke lahko(med drugim) poberemo paket Pandas, če nas zanima ustvarjanje video iger za to obstaja PyGame, za manipulacijo slik obstaja paket PIL ali pa OpenCV... Na kratko nam paketi podajajo neke funcionalnosti, ki nam delo olajšajo. Če bi želeli izrisati histogram nebi to na novo izumli ampak samo pobrali knjižnjico oz paket matplotlib.
+Paketi so skupki modulov, kjer ima vsak modul neko uporabnost. Če želimo analizirati podatke lahko(med drugim) poberemo paket Pandas, če nas zanima ustvarjanje video iger za to obstaja PyGame, za manipulacijo slik obstaja paket PIL ali pa OpenCV... Na kratko nam paketi podajajo neke funcionalnosti, ki nam delo olajšajo. Če bi želeli izrisati histogram ne bi to na novo izumljali ampak bi samo pobrali knjižnjico oz. paket matplotlib.
 
 #### Pobiranje paketov in knjižnjic
 
-Od Pythona 3.4 dalje je PIP vsebovan v samem Pythonu, ko le tega poberemo. 
+Od Pythona 3.4. dalje je PIP vsebovan v samem Pythonu, ko ga prenesemo. 
 
-Ukaze, ki jih omogoča PIP lahko preverimo tako da v ukazno vrstico sistema(cmd na Windows sistemu) vpišemo pip. 
+Ukaze, ki jih omogoča PIP lahko preverimo tako, da v ukazno vrstico sistema(cmd na Windows sistemu) vpišemo pip. 
 
 Primer:
 
@@ -1346,14 +1345,15 @@ Kjer podamo pravo ime knjižnjice. Tako se nam knjižnjica naloži na računalni
 
 #### Moduli in uvažanje (modules and imports)
 
-Ko smo določen paket/modul/knjižnjico pobrali z ukazom pip, lahko v kodi funkcije, razrede, ... ki jih ta ponuja uporabljamo. 
-Če želimo v naši .py datoteki knjižnjico uporabiti moramo to Pythonu povedati, to storimo z ukazom <code>import</code> kjer zraven podamo ime knjižnjice. 
+Ko smo določen paket/modul/knjižnjico pobrali z ukazom pip, lahko v kodi uporabljamo vse funkcije/razrede/karkoli, ki jih knjižnjica ponuja. 
+Če želimo v naši .py datoteki uporabiti knjižnjico moramo to Pythonu povedati z ukazom <code>import</code> ,kjer zraven podamo ime knjižnjice. 
 
 Primer:
 
 ```python
 import csv
 ```
+
 Če imamo v isti mapi več datotek .py v katerih se nahajajo funkcije lahko v drugih datotekah te funkcije uporabljamo tako, da jih najprej uvozimo z zgornjim ukazom.
 
 #### Branje in pisanje v datoteke
@@ -1361,23 +1361,26 @@ import csv
 Med predavanji bomo uporabljali podatke iz SiStat, konkretno: 
 
 **Bruto domači proizvod na prebivalca, Slovenia, letno** 
+
 https://pxweb.stat.si/SiStatData/pxweb/sl/Data/-/H280S.px
-Pobrana datoteka tipa csv(ločeno z vejico in vsebuje glavo) v samem programu preimenovana v bdp_na_preb.csv 
+Pobrana datoteka tipa csv(ločeno z vejico in vsebuje glavo), v samem programu preimenovana v bdp_na_preb.csv 
 
 **Prebivalstvo po izbranih starostnih skupinah in spolu, statistične regije, Slovenija, polletno**
+
 https://pxweb.stat.si/SiStatData/pxweb/sl/Data/-/05C2006S.px
-Poberemo vse podatke za 1. polletje leta 2021.
+Poberemo vse podatke za 1. polletje leta 2020.
 Pobrana datoteka tipa csv(ločeno z vejico in vsebuje glavo) v samem programu preimenovana v preb_po_star_in_spol.csv 
 
-Datoteke lahko odpremo na različne načine(preden lahko iz datoteke beremo mora biti le ta odprta), najbolj pogosta metoda za to je z stavkom <code>with open("pot/do/datoteke/test.txt", "r/w/a") as ime_spremenljivke:</code>. Če se datoteka nahaja v isti mapi kot naš program, lahko navedemo le ime datoteke.
+Datoteke lahko odpremo na različne načine(preden lahko iz datoteke beremo mora biti odprta), najbolj pogosta metoda je s stavkom <code>with open("pot/do/datoteke/test.txt", "r/w/a") as ime_spremenljivke:</code>. Če se datoteka nahaja v isti mapi kot naš program, lahko navedemo le ime datoteke.
 
-Konkretno na primeru če želimo odpreti datoteko <code>test.txt</code>:
+Če želimo odpreti datoteko <code>test.txt</code>:
 
 ```python
 with open("test.txt", 'r') as file:
     # Tukaj lahko potem upravljamo z datoteko
 ```
-opazimo drugi parameter pri <code>open<c/ode> tam navedemo, kaj bomo z datoteko počeli:
+
+Pri drugem parameteru pri <code>open<c/ode> navedemo kaj bomo z datoteko počeli:
   - 'r' read, le brali podatke
   - 'w' write, pisali v datoteko nove podatke oz. vrstice
   - 'a' append, dodajali na konec datoteke nove podatke
@@ -1393,7 +1396,7 @@ with open("test.txt", 'r') as file:
 Izpiše niz prve vrstice v datoteki
 ```
 
-Če želimo prebrati vse vrstice uporabimo metodo <code>readline</code>:
+Če želimo prebrati vse vrstice, uporabimo metodo <code>readline</code>:
 
 ```python
 with open("test.txt", 'r') as file:
@@ -1401,15 +1404,16 @@ with open("test.txt", 'r') as file:
     lines = file.readlines()
     print(line)
     
-Izpiše seznam kjer je vsaka vrstica en element
+Izpiše seznam, kjer je vsaka vrstica en element
 ```
 
-Ker bomo podatke brali iz datotek tipa csv moramo najprej uvoziti integrirano knjižnico <code>csv</code>.
+Ker bomo podatke brali iz datotek tipa csv, moramo najprej uvoziti integrirano knjižnico <code>csv</code>.
 
 ```python
 import csv
 ```
-Ko beremo datoteke tipa csv nam ta knjižnjica olajša branje tako, da ignroira določene nevidne znake, ...
+
+Ko beremo datoteke tipa csv, nam ta knjižnjica olajša branje tako, da ignroira določene nevidne znake ...
 
 Podatke iz odprte datoteke nato preberemo z ukazom:
 
@@ -1421,6 +1425,7 @@ with open("bdp_na_preb.csv", "r") as f:
         
 # Izpiše vse vrstice v datoteki, kjer je vsaka vrstica seznam podatkov.
 ```
+
 <code>csv.reader()</code> vrne seznam vseh vrstic, kjer vsak element predstavlja podatek na določenem stolpcu v datoteki.
 
 
@@ -1432,7 +1437,7 @@ Matplotlib je Python knjižnjica za izrisovanje podatkov, od grafov do histogram
 from matplotlib import pyplot as plt
 ```
 
-**Risanje grafa** 
+**Risanje navadnega grafa** 
 
 Za izrisovanje grafa uporabimo funkcijo <code>plot(x, y)</code>, kjer je x seznam x vrednosti točk, y pa seznam y vrednosti točk.
 
@@ -1451,4 +1456,76 @@ plt.show()  # Če želmo, da se graf prikaže kličemo plt.show()
 
 Zgornje nam izriše sledeči graf:
 
-![Slika_grafa](slike/slika1.png)
+![Slika_grafa](Slike/slika1.png)
+
+
+**Risanje histograma**
+
+
+Za izrisovanje histograma uporabimo funkcijo <code>hist(podatki, bins=10)</code>. Prvi parameter funkcije je seznam vseh podatkov, bins pa določa število stolpcev iste širine, nastavljeno na 10. Namesto števila za bins lahko podamo seznam pozicij stolpcev.
+
+Primer na podatkih višine košarkarjev Dallas Mavericks.
+
+```python
+visine_igralcev =  [183, 185, 188, 193, 196, 198, 201, 206, 208, 213, 221, 224]  # V cm
+
+plt.hist(visine_igralcev)
+plt.show()
+```
+
+Izriše naslednje: 
+
+![Slika histograma](Slike/slika2.png)
+
+Če spremenimo število stolpcev na 5:
+
+```python
+visine_igralcev =  [183, 185, 188, 193, 196, 198, 201, 206, 208, 213, 221, 224]  # V cm
+
+plt.hist(visine_igralcev, bins=5)
+plt.show()
+```
+![Slika histograma z manj stolpci](Slike/slika3.png)
+
+**Imenovanje osi in naslov**
+
+Osi na grafu lahko poimenujemo z uporabo <code>xlabel</code> in <code>ylabel</code>. Naslov določimo z <code>title</code>.
+
+```python
+visine_igralcev =  [183, 185, 188, 193, 196, 198, 201, 206, 208, 213, 221, 224]  # V cm
+
+plt.hist(visine_igralcev, bins=5)
+plt.xlabel("Višina(cm)")
+plt.ylabel("Število igralcev")
+plt.title("Histogram višin igralcev Dallas Mavericks")
+plt.show()
+```
+Izriše:
+
+![Slika histograma z naslovom in poimenovanimi osmi](Slike/slika4.png)
+
+
+**Risanje blokovnega grafa**
+
+Pri histogramu podamo vse merjene vrednosti, če imamo vrednosti že preštete in urejene uporabimo <code>bar</code>. Funkcija parameter prejme x pozicije stolpcev kot seznam, višine stolpcev določimo tako, da parametru height podamo seznam vrednosti. 
+
+Primer: Če uzamemo zgornje podatke višin košarkašev le, da so sedaj prešteti.
+
+```python
+# Višine = [183, 185, 188, 193, 196, 198, 201, 206, 208, 213, 221, 224]
+
+bars_x = ["< 190", "190 - 200", "200-210", "210 <"]  # Opisi stolpcev
+st_po_visini = [3, 2, 3, 3] # 3 igralci so nižji od 190cm, 2 med 190cm in 200cm, ...
+
+plt.bar(bars_x, height=st_po_visini)  
+# Nastavimo opise in naslov
+plt.xlabel("Višina v cm")
+plt.ylabel("Število igralcev")
+plt.title("Višine košarkašev skupine Dallas Mavericks")
+# Izrišemo
+plt.show() 
+```
+
+Izriše:
+
+![Slika blokovnega grafa](Slike/slika5.png)
