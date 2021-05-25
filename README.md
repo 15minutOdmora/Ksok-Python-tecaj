@@ -1,55 +1,27 @@
 # Uvod v programiranje v Python-u 
-KŠOK - Uvod v programiranje v programskem jeziku Python. 
+KŠOK - Uvod v programiranje v programskem jeziku Python, 2021 
 
-V naslednjih nekaj tednih bo potekalo 6 predavanj. Soočli se bomo z vsemi potrebnimi osnovami programiranja v Pythonu, pri zadnjem predavanju 
-pa bomo poskušali naučeno uporabiti v lastnem programu. 
+V mesecu maju je potekalo 6 predavanj. Soočli smo se z vsemi potrebnimi osnovami programiranja v Pythonu, od podatkovnih tipov, zank pa vse do uporabe zunanjih knjižnic. Pri zadnjem predavanju so znanje uporabili na prikazovanju podatkov z uporabo knjižnice matplotlib. 
 
-**Kontakt predavatelja ter Zoom:**  
+**Kontakt predavatelja:**  
 Liam Mislej  
   liammislej@gmail.com  
-  **zoom:** 
-
-Topic: Kšok - Python
-Time: May 25, 2021 04:00 PM Budapest
-
-Join Zoom Meeting
-https://uni-lj-si.zoom.us/j/8856744186?pwd=L3VqWmduV1VwN0QyanRxaHBvbHE4Zz09
-
-Meeting ID: 885 674 4186
-Passcode: 0WYJk0
-
+  
 ---
 
-## Novice
+## Uporabni viri in informacije: 
 
-Zadnja predavanja bodo v torek(25.5.2021) ob 16:00 na zgornjem zoom naslovu.
+Tečaj je sledil sklopom iz spodnjega vira, s tem da smo sklope podrobneje predelali. 
+[https://www.w3schools.com/python/default.asp](https://www.w3schools.com/python/default.asp)
 
-Python si lahko poberete na spodnji povezavi, vklučuje tudi tekstovni urejevalnik IDLE, ki ga bomo uporabljali med predavanji:
-
+Python poberemo na naslovu:
 [https://www.python.org/](https://www.python.org/)
-
-Greste pod downloads in si naložite najnovejšo verzijo, oz. verzijo 3.8 v kolikor nimate Windows 10.
-
----
-
-## Potek 
-
-Predavanja bodo potekala v dveh delih. V prvem delu bodo predavanja v drugem pa vaje, približno tako kot na faksu. 
-Pri predavanjih bom predaval snov(Powerpoint), povedal vse osnove in se v določene stvari poglobil. Pri vajah bomo skupaj predavano uporabili v dejanskem programu, torej bomo pisali kodo in vadili na konkretnih primerih. 
-
-Približen potek posameznih predavanj je prikazan spodaj. Spotoma bom dodajal vse potrebne vire in osnutke. Nekatere stvari se bodo pojavle pred posameznimi predavanji nekatere pa kasneje. 
-
-Na koncu bodo spodnji sklopi služili kot "plonk" listki, kjer bodo na kratko napisane in prikazane vse osnove s katerimi smo se soočli.
-
-Tečaj bo sledil sklopom iz spodnjega vira, s tem da bomo sklope podrobneje predelali. 
-
-[W3schools Python Tutorial](https://www.w3schools.com/python/default.asp)
 
 Vsi uporabljeni oz. napisani programi se nahajajo v mapi Koda.
 
 ---
 
-### Torek 4.5.2021 - Uvod v programiranje, osnovni pojmi, števila, nizi in ostale osnove
+### Uvod v programiranje, osnovni pojmi, števila, nizi in ostale osnove
 
 ---
 
@@ -386,11 +358,7 @@ o
 !
 ```
 
-**Format:**
-
-
-
-### Torek 11.5.2021 - Podatkovni tipi in zanke
+### Podatkovni tipi in zanke
 
 #### Seznami (lists/arrays)
 
@@ -409,6 +377,8 @@ Seznam ustvarimo z oglatimi oklepaji in ga shranimo v spremenljivko:
 >>> print(seznam_z_vec_elementi)
 [1, 3, "niz", [4, 5, 6]]
 ```
+
+---
 
 **Dostopanje do podatkov(Indexing):**
 
@@ -793,7 +763,7 @@ else:
 Starost je večja ali enaka 45
 ```
 
-### Četrtek 13.5.2021 - Zanke in funkcije 
+### Zanke in funkcije 
 
 #### While zanka (while loop)
 
@@ -978,15 +948,16 @@ print(pomnozi_z_pet(4))
 20
 ```
 
+----
 
-### Torek 18.5.2021 - Ponovitev naučenega, Lambda funkcije in naivna igra Križec Krožec 
+### Lambda funkcije in naivna igra Križec Krožec 
 
-#### Lambda funkcije (lambdas)
+#### Lambda funkcije (lambdas) in rešitev naloge ter Križec Krožec
 
 Podobno kot navadne funkcije, lahko še enovrstične funkcije, ki jim pravimo lambda funkcije. Te uporabljamo, kadar potrebujemo enostavnejše funkcije, ki jih lahko zapišemo v eni vrstici. Te funkcije definiramo brez besede <code>def</code> tako, da uporabimo izraz <code>lambda</code>. Njihovo funkcionalnost shranimo v spremenljivko. 
 
 Pišemo:
-<code>ime_sprem = lambda parameter: neka operacija, ki jo funkcija izvede ali vrne</code>
+<code>ime_sprem = lambda parameter: operacija, ki jo funkcija izvede ter vrne podatek</code>
 
 Če si pogledamo na primerih:
 
@@ -1146,8 +1117,9 @@ else:
     print("Igra je bila izenacena!")
 ```
 
+---
 
-### Četrtek 20.5.2021 - Objektno programiranje, Razredi in objekti
+### Objektno programiranje: Razredi, objekti in dedovanje
 
 #### Razredi (classes)
 
@@ -1314,7 +1286,9 @@ Delavec Janez Novak je zaposlen in je v življenju delal 2 let.
 22
 ```
 
-### Torek 25.5.2021 - Knjižnice, branje in pisanje v datoteke, matplotlib
+---
+
+### Knjižnice, branje podatkov iz datotek, csv in matplotlib
 
 #### PIP
 
@@ -1341,7 +1315,6 @@ C:\Users\Liam>pip install matplotlib
 ```
 
 Kjer podamo pravo ime knjižnjice. Tako se nam knjižnjica naloži na računalnik oz. tam kjer se Python nahaja.
-
 
 #### Moduli in uvažanje (modules and imports)
 
@@ -1529,3 +1502,7 @@ plt.show()
 Izriše:
 
 ![Slika blokovnega grafa](Slike/slika5.png)
+
+---
+
+Liam Mislej, 25.5.2021
