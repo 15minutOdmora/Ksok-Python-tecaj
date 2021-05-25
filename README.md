@@ -58,7 +58,6 @@ Vsi uporabljeni oz. napisani programi se nahajajo v mapi Koda.
 Python je interpretni visokoravni večnamenski programski jezik. Interpretni (interpreted) pomeni, da se napisana koda izvaja postopoma brez potrebe po kompilaciji programa. Pomembno je vedeti, da se koda izvaja zaporedoma po vrsticah (prvo se izvede prva vrstica, nato druga, tretja, ...)
 
 
-
 Nekateri programski jeziki uporabljajo razne znake (<code>{ }, ;, ...</code>) za ločevanje blokov kode. Pri Pythonu to ni tako; uporablja se indentacijo (indente) za ločevanje blokov. Indent je le niz, ki ga (ponavadi) sestavljajo štirje presledki, Krajše napišemo oz. natipkamo z tipko <code>Tab</code>, primer: 
 
 Python  
@@ -1438,7 +1437,7 @@ Matplotlib je Python knjižnjica za izrisovanje podatkov, od grafov do histogram
 from matplotlib import pyplot as plt
 ```
 
-**Risanje grafa** 
+**Risanje navadnega grafa** 
 
 Za izrisovanje grafa uporabimo funkcijo <code>plot(x, y)</code>, kjer je x seznam x vrednosti točk, y pa seznam y vrednosti točk.
 
@@ -1458,3 +1457,75 @@ plt.show()  # Če želmo, da se graf prikaže kličemo plt.show()
 Zgornje nam izriše sledeči graf:
 
 ![Slika_grafa](Slike/slika1.png)
+
+
+**Risanje histograma**
+
+
+Za izrisovanje histograma uporabimo funkcijo <code>hist(podatki, bins=10)</code>. Prvi parameter funkcije je seznam vseh podatkov, bins pa določa število stolpcev iste širine, nastavljeno na 10. Namesto števila za bins lahko podamo seznam pozicij stolpcev.
+
+Primer na podatkih višine košarkarjev Dallas Mavericks.
+
+```python
+visine_igralcev =  [183, 185, 188, 193, 196, 198, 201, 206, 208, 213, 221, 224]  # V cm
+
+plt.hist(visine_igralcev)
+plt.show()
+```
+
+Izriše naslednje: 
+
+![Slika histograma](Slike/slika2.png)
+
+Če spremenimo število stolpcev na 5:
+
+```python
+visine_igralcev =  [183, 185, 188, 193, 196, 198, 201, 206, 208, 213, 221, 224]  # V cm
+
+plt.hist(visine_igralcev, bins=5)
+plt.show()
+```
+![Slika histograma z manj stolpci](Slike/slika3.png)
+
+**Imenovanje osi in naslov**
+
+Osi na grafu lahko poimenujemo z uporabo <code>xlabel</code> in <code>ylabel</code>. Naslov določimo z <code>title</code>.
+
+```python
+visine_igralcev =  [183, 185, 188, 193, 196, 198, 201, 206, 208, 213, 221, 224]  # V cm
+
+plt.hist(visine_igralcev, bins=5)
+plt.xlabel("Višina(cm)")
+plt.ylabel("Število igralcev")
+plt.title("Histogram višin igralcev Dallas Mavericks")
+plt.show()
+```
+Izriše:
+
+![Slika histograma z naslovom in poimenovanimi osmi](Slike/slika4.png)
+
+
+**Risanje blokovnega grafa**
+
+Pri histogramu podamo vse merjene vrednosti, če imamo vrednosti že preštete in urejene uporabimo <code>bar</code>. Funkcija parameter prejme x pozicije stolpcev kot seznam, višine stolpcev določimo tako, da parametru height podamo seznam vrednosti. 
+
+Primer: Če uzamemo zgornje podatke višin košarkašev le, da so sedaj prešteti.
+
+```python
+# Višine = [183, 185, 188, 193, 196, 198, 201, 206, 208, 213, 221, 224]
+
+bars_x = ["< 190", "190 - 200", "200-210", "210 <"]  # Opisi stolpcev
+st_po_visini = [3, 2, 3, 3] # 3 igralci so nižji od 190cm, 2 med 190cm in 200cm, ...
+
+plt.bar(bars_x, height=st_po_visini)  
+# Nastavimo opise in naslov
+plt.xlabel("Višina v cm")
+plt.ylabel("Število igralcev")
+plt.title("Višine košarkašev skupine Dallas Mavericks")
+# Izrišemo
+plt.show() 
+```
+
+Izriše:
+
+![Slika blokovnega grafa](Slike/slika5.png)
