@@ -1,11 +1,11 @@
 # Uvod v programiranje v Python-u 
 KŠOK - Uvod v programiranje v programskem jeziku Python, 2021 
 
-V mesecu maju je potekalo 6 predavanj. Soočli smo se z vsemi potrebnimi osnovami programiranja v Pythonu, od podatkovnih tipov, zank pa vse do uporabe zunanjih knjižnic. Pri zadnjem predavanju so znanje uporabili na prikazovanju podatkov z uporabo knjižnice matplotlib. 
+V mesecu maju je potekalo 6 predavanj. Soočli smo se z vsemi potrebnimi osnovami programiranja v Pythonu, od podatkovnih tipov, zank pa vse do uporabe zunanjih knjižnic. Pri zadnjem predavanju smo znanje uporabili na prikazovanju podatkov z uporabo knjižnice matplotlib. 
 
 **Kontakt predavatelja:**  
 Liam Mislej  
-  liammislej@gmail.com  
+liammislej@gmail.com  
   
 ---
 
@@ -22,8 +22,6 @@ Vsi uporabljeni oz. napisani programi se nahajajo v mapi Koda.
 ---
 
 ### Uvod v programiranje, osnovni pojmi, števila, nizi
-
----
 
 #### Python
 
