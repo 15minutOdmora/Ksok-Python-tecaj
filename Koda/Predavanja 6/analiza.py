@@ -63,6 +63,6 @@ if __name__ == "__main__":
     # Nastavimo opise in naslov
     plt.xlabel("Višina v cm")
     plt.ylabel("Število igralcev")
-    plt.title("Višine košarkašev skupine Dallas Mavericks")
+    plt.title("Višine košarkarjev skupine Dallas Mavericks")
     # Izrišemo
     plt.show()
