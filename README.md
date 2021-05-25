@@ -21,7 +21,7 @@ Vsi uporabljeni oz. napisani programi se nahajajo v mapi Koda.
 
 ---
 
-### Uvod v programiranje, osnovni pojmi, števila, nizi in ostale osnove
+### Uvod v programiranje, osnovni pojmi, števila, nizi
 
 ---
 
